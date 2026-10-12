@@ -338,7 +338,7 @@
     var originale = $('[data-wp-originale]');
     if (originale) originale.href = VECCHIO + '/' + (tipo === 'pages' ? slug + '/' : '?name=' + encodeURIComponent(slug));
     if (PAGINE_NUOVE[slug] && tipo === 'pages' && !par.has('integrale')) { location.replace(PAGINE_NUOVE[slug]); return; }
-    wp('/' + tipo + '?slug=' + encodeURIComponent(slug) + '&_fields=id,title,date,content,link').then(function (r) {
+    wp('/' + tipo + '?slug=' + encodeURIComponent(slug) + '&_fields=id,title,date,content,link,comment_status').then(function (r) {
       if (!r.length) throw new Error('non trovato');
       var a = r[0], titolo = soloTesto(a.title.rendered) || 'Senza titolo';
       document.title = titolo + ' · Le Linci';
@@ -346,14 +346,14 @@
       $('[data-wp-data]').textContent = tipo === 'posts' ? dataIt(a.date) : 'Pagina storica';
       inserisci($('[data-wp-corpo]'), a.content.rendered);
       if (originale) originale.href = a.link.replace(/^https?:\/\/(www\.)?corriconlelinci\.com/, VECCHIO);
-      if (tipo === 'posts') caricaCommenti(a.id, originale ? originale.href : VECCHIO);
+      if (tipo === 'posts') caricaCommenti(a.id, originale ? originale.href : VECCHIO, a.comment_status === 'open');
     }).catch(function () {
       $('[data-wp-titolo]').textContent = 'Contenuto non trovato';
       $('[data-wp-corpo]').innerHTML = '<p>Non riusciamo a caricare questo contenuto. Prova dall’<a href="archivio.html">archivio</a>.</p>';
     });
   }
 
-  function caricaCommenti(id, linkOriginale) {
+  function caricaCommenti(id, linkOriginale, aperti) {
     var box = $('[data-wp-commenti]');
     if (!box) return;
     wp('/comments?post=' + id + '&per_page=50&order=asc&_fields=author_name,date,content').then(function (c) {
@@ -363,7 +363,10 @@
         return '<li class="rounded-2xl bg-white p-4 ring-1 ring-blu-100"><p class="text-sm"><strong>' + esc(x.author_name) + '</strong> · ' + dataIt(x.date) +
           '</p><p class="mt-1">' + esc(soloTesto(x.content.rendered)) + '</p></li>';
       }).join('');
-      $('[data-wp-commenta]', box).href = linkOriginale + '#respond';
+      var commenta = $('[data-wp-commenta]', box);
+      commenta.href = linkOriginale + '#respond';
+      if (!aperti) commenta.style.display = 'none';
+      if (!c.length && !aperti) return;
       box.hidden = false;
     }).catch(function () {});
   }
