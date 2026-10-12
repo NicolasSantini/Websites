@@ -41,7 +41,7 @@ Se si sbaglia, nella cronologia del file ("History") si torna alla versione prec
 
 1. **Pubblicare gratis su GitHub Pages**: con il repository pubblico, in *Settings → Pages* scegliere
    *Source: GitHub Actions*. Poi in *Actions → Sito Le Linci su GitHub Pages → Run workflow* lanciare la prima pubblicazione.
-   Da lì in avanti ogni modifica al ramo principale del repository ripubblica il sito da sola, su
+   Da lì in avanti ogni modifica al ramo `main` ripubblica il sito da sola, su
    `https://nicolassantini.github.io/Websites/`. Nessun costo e nessuna carta di credito.
    Il workflow pubblica solo le pagine e `assets/`: questo documento, `PROPOSTA.md`, `src/` e `tools/` non vanno online
    (restano però visibili nel repository, se è pubblico).
