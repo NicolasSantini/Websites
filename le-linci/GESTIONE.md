@@ -39,9 +39,10 @@ Se si sbaglia, nella cronologia del file ("History") si torna alla versione prec
 
 ## Primo avvio (una volta sola)
 
-1. **Pubblicare gratis su GitHub Pages**: rendere pubblico il repository, poi in *Settings → Pages* scegliere
-   *Source: GitHub Actions*. Dopo l'unione nel ramo `main`, il workflow `.github/workflows/le-linci-pages.yml`
-   pubblica il sito su `https://nicolassantini.github.io/Websites/`. Nessun costo e nessuna carta di credito.
+1. **Pubblicare gratis su GitHub Pages**: con il repository pubblico, in *Settings → Pages* scegliere
+   *Source: GitHub Actions*. Poi in *Actions → Sito Le Linci su GitHub Pages → Run workflow* lanciare la prima pubblicazione.
+   Da lì in avanti ogni modifica al ramo principale del repository ripubblica il sito da sola, su
+   `https://nicolassantini.github.io/Websites/`. Nessun costo e nessuna carta di credito.
    Il workflow pubblica solo le pagine e `assets/`: questo documento, `PROPOSTA.md`, `src/` e `tools/` non vanno online
    (restano però visibili nel repository, se è pubblico).
 2. **Modulo contatti**: al primo messaggio FormSubmit manda un'email di attivazione a lelinci.brancopodistico@gmail.com;

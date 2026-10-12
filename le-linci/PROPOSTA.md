@@ -100,55 +100,58 @@ Instagram / Facebook / WhatsApp / Google "trail sul trebbio"
 
 ---
 
-## Sezione 2: Proposta economica e stima costi
+## Sezione 2: Costi
+
+### Situazione attuale (verificata)
+
+- Il blog è su **WordPress.com, piano gratuito**: per questo da telefono compaiono pubblicità e banner della piattaforma.
+- Il dominio `corriconlelinci.com` è **registrato tramite WordPress.com** (nameserver WordPress) e **scade il 26 novembre 2026**.
+  Il rinnovo di un `.com` su WordPress.com costa circa 13 $ l'anno ¹.
+- Quindi oggi le Linci spendono solo il dominio, ma il sito ha la pubblicità e non è pensato per il telefono.
 
 ### Confronto
 
-| Voce | Oggi: WordPress.com gratuito (+ dominio) | WordPress.com senza pubblicità (piano Personal) | **Nuovo: sito statico (Jamstack)** |
+| Voce | Oggi: WordPress.com gratuito | WordPress.com senza pubblicità (piano a pagamento) | **Nuovo sito + WordPress gratuito come redazione** |
 |---|---|---|---|
-| Hosting | 0 € | incluso nel piano | **0 €** (GitHub Pages, oppure Netlify / Cloudflare Pages: piani gratuiti) |
-| Piano / abbonamento | 0 € | ~48 €/anno ¹ | **0 €** |
-| Dominio `.com` | ~15–25 €/anno ¹ ² | incluso il 1° anno, poi ~20 €/anno ¹ | **~11–12 €/anno** (Cloudflare Registrar / Porkbun, a prezzo di costo) |
-| Pubblicità e banner della piattaforma | **Sì**, fino a ~30% dello schermo da telefono | No | **No** |
-| Aggiornamenti tema, plugin, sicurezza | A carico della piattaforma, temi limitati | A carico della piattaforma | **Nessuno**: HTML statico, niente da aggiornare né da attaccare |
-| Velocità da mobile | Pagine pesanti (temi, script, pubblicità) | Media | **Molto alta**: una pagina leggera servita da CDN |
-| Modulo contatti | Limitato | Limitato | FormSubmit (gratuito) inoltra i messaggi alla casella delle Linci |
-| Certificato HTTPS | Incluso | Incluso | Incluso, automatico |
-| **Totale annuo** | **~15–25 €, con pubblicità** | **~48–70 €** | **~12 €, senza pubblicità** |
+| Hosting del sito | 0 € | incluso nel piano | **0 €** (GitHub Pages) |
+| Piano WordPress | 0 € | ~48 €/anno ¹ | **0 €** (il blog gratuito resta per scrivere gli articoli) |
+| Dominio `.com` | ~13 $/anno (WordPress.com) | incluso il 1° anno | **~10–13 €/anno** (resta su WordPress.com o passa a Cloudflare/Porkbun) |
+| Pubblicità sul sito che vedono i runner | **Sì**, fino a ~30% dello schermo da telefono | No | **No** |
+| Sito pensato per il telefono | No (home con 172 link) | Dipende dal tema | **Sì** |
+| Aggiornamenti tema, plugin, sicurezza | Della piattaforma | Della piattaforma | **Nessuno**: HTML statico |
+| Newsletter (414 iscritti), articoli dall'app | Sì | Sì | **Sì, invariati** |
+| **Totale annuo** | **~12 €, con pubblicità** | **~48–60 €** | **~12 €, senza pubblicità** |
 
-¹ Prezzi di listino indicativi a ottobre 2026; verificare sul pannello WordPress.com dell'associazione.
-² Su WordPress.com un dominio personalizzato richiede di norma un piano a pagamento o una vecchia "mappatura dominio".
-Conviene verificare quanto paga oggi l'associazione prima di inviare i numeri.
+¹ Prezzi di listino indicativi a ottobre 2026: verificare sul pannello WordPress.com dell'associazione.
 
-**Il punto chiave:** per togliere la pubblicità restando su WordPress.com bisogna pagare un piano.
-Con il sito statico la pubblicità sparisce e l'unico costo fisso resta il rinnovo del dominio (~12 €/anno),
-**circa il 75% in meno** rispetto a un WordPress.com senza pubblicità.
+**Il punto chiave:** non è un risparmio rispetto a oggi, è lo **stesso costo con un sito molto migliore**.
+Per avere un sito senza pubblicità restando su WordPress.com servirebbe un piano a pagamento (~48 €/anno):
+con questa soluzione si ottiene lo stesso risultato, e un sito pensato per il telefono, pagando solo il dominio.
+
+**Scadenza da non perdere:** il dominio va rinnovato entro il 26 novembre 2026, subito dopo il Trebbio.
+Si può rinnovare su WordPress.com come sempre, oppure trasferirlo a un altro registrar: il trasferimento include un anno di rinnovo.
 
 ### Perché "zero manutenzione" è realistico
 
-- **Niente da aggiornare:** nessun CMS, plugin o database. Le pagine HTML non "invecchiano" e non si possono bucare come un WordPress non aggiornato.
-- **Niente server:** GitHub Pages (o Netlify/Cloudflare) serve i file gratis; il certificato HTTPS si rinnova da solo.
-- **Le notizie si scrivono come oggi:** articoli, foto, newsletter (oltre 400 iscritti) e commenti restano su WordPress.com, anche dall'app. Il nuovo sito li legge da lì e li mostra senza pubblicità. Dettagli in [`GESTIONE.md`](./GESTIONE.md).
-- **Aggiornare una gara è semplice:** i dati del Trebbio sono in un solo blocco del file (`GARA` + testi della sezione hero). Per l'edizione 2027 bastano 10 minuti, li posso fare io.
-- **Le notizie restano sui social**, dove il direttivo pubblica già: il sito non chiede altro lavoro.
-- **Opzionale, più avanti:** un pannello di modifica semplice (Decap CMS) se qualcuno del direttivo vuole aggiornare i testi da solo.
+- **Niente da aggiornare:** nessun plugin né database sul sito. Le pagine HTML non "invecchiano" e non si possono bucare come un WordPress non aggiornato.
+- **Niente server:** GitHub Pages serve i file gratis; il certificato HTTPS si rinnova da solo.
+- **Le notizie si scrivono come oggi:** articoli, foto, newsletter e commenti restano su WordPress.com, anche dall'app. Il nuovo sito li legge da lì e li mostra senza pubblicità. Dettagli in [`GESTIONE.md`](./GESTIONE.md).
+- **Aggiornare una gara è semplice:** 1–2 volte l'anno si cambiano date e quote nei file del sito, anche dal browser. Lo posso fare io in pochi minuti.
 
 ### Piano di passaggio, senza rischi e senza disturbare il Trebbio
 
-1. **Adesso (ottobre):** il sito è online su un indirizzo di prova gratuito (`nicolassantini.github.io/Websites/`). Il sito attuale non viene toccato.
-2. **Dopo il 15 novembre:** esporto i contenuti da WordPress (Strumenti → Esporta, un file XML), costruisco le pagine Gare, Branco e Archivio e le faccio verificare a Davide.
-3. **Passaggio:** punto il dominio sul nuovo hosting (5 minuti, reversibile). Il vecchio sito resta raggiungibile all'indirizzo `*.wordpress.com` come copia di sicurezza.
-4. **Facoltativo:** trasferimento del dominio da WordPress.com a Cloudflare Registrar per ridurre il rinnovo a ~11 €/anno.
+1. **Adesso (ottobre):** il nuovo sito è online su un indirizzo di prova gratuito (`nicolassantini.github.io/Websites/`). Il sito attuale non viene toccato.
+2. **Dopo il 15 novembre:** Davide e il direttivo verificano i contenuti; io sistemo quello che serve.
+3. **Passaggio (entro il 26 novembre, scadenza del dominio):** il dominio `corriconlelinci.com` punta al nuovo sito (pochi minuti, reversibile).
+   Il blog resta attivo e gratuito su `corriconlelinci.wordpress.com`: è lì che si continuano a scrivere gli articoli.
 
-### Testo per spiegare il risparmio a Davide
+### Testo per spiegare la proposta a Davide
 
-> Oggi il sito è gratuito, ma il prezzo lo pagano i vostri runner: banner e avvisi della piattaforma che da
-> telefono coprono le informazioni della gara. Per toglierli restando su WordPress.com servirebbe un piano da
-> circa 48 € l'anno.
-> Con la soluzione che vi propongo il sito diventa un insieme di pagine leggere ospitate gratis (GitHub Pages,
-> lo stesso servizio usato da aziende molto più grandi), e gli articoli si continuano a scrivere su WordPress come oggi. Resta un solo costo, il dominio
-> corriconlelinci.com, circa 12 € l'anno: niente pubblicità, niente aggiornamenti o plugin da seguire, e
-> niente da rifare in fretta il giorno prima della gara.
+> Oggi il sito vi costa solo il dominio, ma il prezzo lo pagano i vostri runner: pubblicità e banner della piattaforma che da
+> telefono coprono le informazioni della gara. Per toglierli restando su WordPress.com servirebbe un piano da circa 48 € l'anno.
+> Con la soluzione che vi propongo il costo resta lo stesso di oggi, solo il dominio: il sito nuovo è ospitato gratis
+> e voi continuate a scrivere gli articoli su WordPress come fate adesso, newsletter compresa. In più niente pubblicità,
+> niente plugin da aggiornare, e un sito pensato per chi si iscrive dal telefono.
 
 ---
 
@@ -228,9 +231,8 @@ risorsa mancante, nessuno scroll orizzontale. Testati anche countdown, calendari
 > 1. **Chi si iscrive dal telefono trova subito tutto.** Data, ora, luogo e il pulsante "Iscriviti" sono nel
 >    primo schermo; GPX, regolamento e navigatore sono a un tocco. I 172 link della home di oggi finiscono in un archivio
 >    ordinato, così non si perde niente.
-> 2. **Niente pubblicità e costi quasi a zero.** Il sito diventa un insieme di pagine leggere ospitate
->    gratis: resta solo il rinnovo del dominio, circa 12 € l'anno. Per togliere i banner su WordPress.com
->    servirebbe invece un piano a pagamento.
+> 2. **Niente pubblicità, allo stesso costo di oggi.** Il sito nuovo è ospitato gratis: resta solo il rinnovo del
+>    dominio, come adesso. Gli articoli e la newsletter continuano su WordPress, senza cambiare nulla per voi.
 > 3. **Zero manutenzione e zero tempo per voi.** Non ci sono plugin da aggiornare né password da custodire,
 >    e le notizie restano sui social come adesso. Il lavoro tecnico lo faccio io, e il sito attuale non lo
 >    tocco finché non mi date l'ok: possiamo pensarci con calma dopo il 15 novembre.
