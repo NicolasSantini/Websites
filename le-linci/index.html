@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html lang="it" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Le Linci · Branco Podistico</title>
+  <meta name="description" content="Le Linci - Branco Podistico di Faenza (Pol. Dil. Santa Lucia). 11° Trail sul Trebbio, domenica 15 novembre 2026 a Modigliana: percorsi, traccia GPX, regolamento e iscrizioni.">
+  <meta name="theme-color" content="#14231c">
+
+  <!-- Open Graph: anteprima quando il link viene condiviso su WhatsApp/Facebook -->
+  <meta property="og:title" content="Trail sul Trebbio · 15 novembre 2026">
+  <meta property="og:description" content="19 km competitiva a coppie · 10 km ludico-motoria · Kids trail. Ritrovo al Camping La Luna sul Trebbio, Modigliana. Iscrizioni aperte.">
+  <meta property="og:type" content="website">
+
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><rect width='64' height='64' rx='14' fill='%2314231c'/><path d='M14 50 L22 14 L32 30 L42 14 L50 50 Z' fill='%23f2a93b'/></svg>">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Prototipo: Tailwind Play CDN. In produzione si compila una volta con la Tailwind CLI (vedi PROPOSTA.md). -->
+  <script src="https://cdn.tailwindcss.com/3.4.17"></script>
+  <script>
+    if (window.tailwind) tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            bosco:  { 950: '#0b1611', 900: '#14231c', 800: '#1d3329', 700: '#2a4a3b', 100: '#e3ece6' },
+            lince:  { 500: '#f2a93b', 600: '#e08f17', 700: '#8f5508', 100: '#fdf0da' },
+            sasso:  { 50: '#f7f5f0', 100: '#eeeae1', 600: '#5d5a52', 800: '#2e2c27' }
+          },
+          fontFamily: {
+            display: ['"Barlow Condensed"', 'system-ui', 'sans-serif'],
+            sans: ['Inter', 'system-ui', 'sans-serif']
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    /* Spazio per la barra CTA fissa in basso su mobile + safe area iPhone */
+    body { padding-bottom: calc(5.5rem + env(safe-area-inset-bottom)); }
+    @media (min-width: 768px) { body { padding-bottom: 0; } }
+    .topo-bg {
+      background-image:
+        radial-gradient(circle at 20% 10%, rgba(242,169,59,.18), transparent 45%),
+        repeating-radial-gradient(circle at 85% 120%, rgba(255,255,255,.05) 0 2px, transparent 2px 26px);
+    }
+    .no-scrollbar::-webkit-scrollbar { display: none; }
+    .no-scrollbar { scrollbar-width: none; }
+    [id] { scroll-margin-top: 7.5rem; }
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      * { transition: none !important; animation: none !important; }
+    }
+  </style>
+</head>
+
+<body class="bg-sasso-50 font-sans text-sasso-800 antialiased">
+
+  <a href="#contenuto" class="sr-only focus:not-sr-only focus:absolute focus:z-50 focus:m-2 focus:rounded-lg focus:bg-lince-500 focus:px-4 focus:py-2 focus:font-semibold focus:text-bosco-950">Vai al contenuto</a>
+
+  <!-- Fascia "mockup": da rimuovere quando il sito va online -->
+  <div class="bg-lince-100 px-4 py-1.5 text-center text-xs font-medium text-lince-700">
+    Mockup di proposta · contenuti ripresi da corriconlelinci.com, dettagli 2026 da confermare con l'organizzazione
+  </div>
+
+  <!-- ============ HEADER STICKY ============ -->
+  <header class="sticky top-0 z-40 border-b border-white/10 bg-bosco-900/95 text-white backdrop-blur supports-[backdrop-filter]:bg-bosco-900/85">
+    <div class="mx-auto flex max-w-6xl items-center justify-between gap-3 px-4 py-3">
+      <a href="#" class="flex min-h-[44px] items-center gap-2.5" aria-label="Le Linci, torna all'inizio">
+        <svg class="h-9 w-9 shrink-0" viewBox="0 0 64 64" aria-hidden="true">
+          <rect width="64" height="64" rx="14" fill="#f2a93b"/>
+          <path d="M14 50 L22 14 L32 30 L42 14 L50 50 Z" fill="#14231c"/>
+          <circle cx="25" cy="38" r="3" fill="#f2a93b"/><circle cx="39" cy="38" r="3" fill="#f2a93b"/>
+        </svg>
+        <span class="leading-none">
+          <span class="block font-display text-2xl font-extrabold uppercase tracking-wide">Le Linci</span>
+          <span class="block text-[11px] font-medium uppercase tracking-[0.18em] text-white/60">Branco Podistico</span>
+        </span>
+      </a>
+
+      <!-- Indicatore prossima gara -->
+      <a href="#gara" class="hidden items-center gap-2 rounded-full border border-lince-500/40 bg-lince-500/10 px-3 py-1.5 text-sm sm:flex">
+        <span class="relative flex h-2.5 w-2.5">
+          <span class="absolute inline-flex h-full w-full animate-ping rounded-full bg-lince-500 opacity-75"></span>
+          <span class="relative inline-flex h-2.5 w-2.5 rounded-full bg-lince-500"></span>
+        </span>
+        <span class="text-white/70">Prossima gara:</span>
+        <strong class="font-semibold text-lince-500">Trebbio · 15 nov</strong>
+      </a>
+
+      <nav class="hidden items-center gap-6 text-sm font-medium md:flex" aria-label="Navigazione principale">
+        <a href="#gara" class="text-white/80 hover:text-lince-500">La gara</a>
+        <a href="#percorsi" class="text-white/80 hover:text-lince-500">Percorsi</a>
+        <a href="#branco" class="text-white/80 hover:text-lince-500">Il Branco</a>
+        <a href="#contatti" class="text-white/80 hover:text-lince-500">Contatti</a>
+      </nav>
+
+      <a href="#iscrizione" class="js-iscrizione inline-flex min-h-[44px] items-center rounded-full bg-lince-500 px-4 text-sm font-bold text-bosco-950 shadow hover:bg-lince-600">
+        Iscriviti
+      </a>
+    </div>
+
+    <!-- Nav mobile: 4 voci sempre visibili, niente menu a scomparsa -->
+    <nav class="no-scrollbar flex gap-1 overflow-x-auto border-t border-white/10 px-2 md:hidden" aria-label="Navigazione principale (mobile)">
+      <a href="#gara" class="flex min-h-[44px] shrink-0 items-center gap-1.5 px-3 text-sm font-medium text-white/85">
+        <span class="h-2 w-2 rounded-full bg-lince-500" aria-hidden="true"></span>Gara 15/11
+      </a>
+      <a href="#percorsi" class="flex min-h-[44px] shrink-0 items-center px-3 text-sm font-medium text-white/85">Percorsi</a>
+      <a href="#branco" class="flex min-h-[44px] shrink-0 items-center px-3 text-sm font-medium text-white/85">Il Branco</a>
+      <a href="#contatti" class="flex min-h-[44px] shrink-0 items-center px-3 text-sm font-medium text-white/85">Contatti</a>
+    </nav>
+  </header>
+
+  <main id="contenuto">
+
+    <!-- ============ HERO: TRAIL SUL TREBBIO ============ -->
+    <section id="gara" class="topo-bg relative overflow-hidden bg-bosco-900 text-white" aria-labelledby="titolo-gara">
+      <div class="mx-auto grid max-w-6xl gap-10 px-4 pb-12 pt-8 md:grid-cols-[1.25fr_1fr] md:items-center md:pb-20 md:pt-16">
+        <div>
+          <span class="inline-flex items-center gap-2 rounded-full bg-lince-500 px-3 py-1 text-xs font-bold uppercase tracking-wider text-bosco-950">
+            <svg class="h-3.5 w-3.5" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path d="M10 1l2.6 5.6 6.1.7-4.5 4.2 1.2 6L10 14.5 4.6 17.5l1.2-6L1.3 7.3l6.1-.7L10 1z"/></svg>
+            Prossimo evento · 11ª edizione
+          </span>
+
+          <h1 id="titolo-gara" class="mt-4 font-display text-5xl font-extrabold uppercase leading-[0.95] tracking-tight sm:text-6xl md:text-7xl">
+            Trail sul<br><span class="text-lince-500">Trebbio</span>
+          </h1>
+
+          <!-- Le 3 informazioni che il runner cerca: data, luogo, ora -->
+          <dl class="mt-6 grid grid-cols-2 gap-3 sm:grid-cols-3">
+            <div class="col-span-2 rounded-2xl bg-white/5 p-4 ring-1 ring-white/10 sm:col-span-1">
+              <dt class="text-xs font-semibold uppercase tracking-wider text-white/60">Data</dt>
+              <dd class="mt-1 font-display text-3xl font-bold leading-none">Dom 15 Nov <span class="text-white/60">2026</span></dd>
+            </div>
+            <div class="rounded-2xl bg-white/5 p-4 ring-1 ring-white/10">
+              <dt class="text-xs font-semibold uppercase tracking-wider text-white/60">Partenza</dt>
+              <dd class="mt-1 font-display text-2xl font-bold leading-none sm:text-3xl">Ore 9:30</dd>
+              <dd class="mt-1 text-sm text-white/70">Kids trail ore 9:45</dd>
+            </div>
+            <div class="rounded-2xl bg-white/5 p-4 ring-1 ring-white/10">
+              <dt class="text-xs font-semibold uppercase tracking-wider text-white/60">Luogo</dt>
+              <dd class="mt-1 font-display text-2xl font-bold leading-none sm:text-3xl">Modigliana</dd>
+              <dd class="mt-1 text-sm text-white/70">
+                <a class="underline decoration-lince-500 underline-offset-4 hover:text-lince-500"
+                   href="https://www.google.com/maps/search/?api=1&query=Camping+La+Luna+sul+Trebbio+Modigliana"
+                   target="_blank" rel="noopener">Camping La Luna ↗</a>
+              </dd>
+            </div>
+          </dl>
+
+          <!-- CTA -->
+          <div class="mt-7 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
+            <!-- Verificare che le iscrizioni 2026 siano su ENDU, poi togliere data-placeholder -->
+            <a id="iscrizione" href="https://www.endu.net/events/trail-sul-trebbio" data-placeholder="Qui si apre la piattaforma d'iscrizione ufficiale (es. ENDU)."
+               class="js-iscrizione inline-flex min-h-[56px] items-center justify-center gap-2 rounded-2xl bg-lince-500 px-8 font-display text-2xl font-extrabold uppercase tracking-wide text-bosco-950 shadow-lg shadow-lince-500/20 transition hover:bg-lince-600 focus:outline-none focus-visible:ring-4 focus-visible:ring-lince-500/50">
+              Iscriviti ora
+              <svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+            </a>
+            <div class="grid grid-cols-2 gap-3 sm:flex">
+              <a href="files/trail-sul-trebbio-2026.gpx" download data-placeholder="Qui si scarica la traccia GPX dei percorsi."
+                 class="inline-flex min-h-[52px] items-center justify-center gap-2 rounded-2xl border border-white/25 px-4 text-sm font-semibold hover:border-lince-500 hover:text-lince-500">
+                <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M3 17l5-10 4 7 3-4 6 7"/><path d="M12 3v6m0 0l-2.5-2.5M12 9l2.5-2.5"/></svg>
+                Traccia GPX
+              </a>
+              <a href="files/regolamento-trail-sul-trebbio-2026.pdf" data-placeholder="Qui si apre il regolamento in PDF."
+                 class="inline-flex min-h-[52px] items-center justify-center gap-2 rounded-2xl border border-white/25 px-4 text-sm font-semibold hover:border-lince-500 hover:text-lince-500">
+                <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M14 3H7a2 2 0 00-2 2v14a2 2 0 002 2h10a2 2 0 002-2V8z"/><path d="M14 3v5h5M9 13h6M9 17h4"/></svg>
+                Regolamento PDF
+              </a>
+            </div>
+          </div>
+          <p class="mt-4 text-sm text-white/60"><strong class="text-lince-500">Iscrizioni aperte dal 1° ottobre.</strong> Max 150 iscritti per percorso. 19 km: certificato medico agonistico e tessera obbligatori.</p>
+        </div>
+
+        <!-- Countdown + aggiungi al calendario -->
+        <aside class="rounded-3xl bg-bosco-950/60 p-6 ring-1 ring-white/10" aria-label="Conto alla rovescia">
+          <p class="text-xs font-semibold uppercase tracking-wider text-white/60">Mancano</p>
+          <div class="mt-3 grid grid-cols-4 gap-2 text-center" id="countdown" aria-live="polite">
+            <div><span data-cd="d" class="block font-display text-5xl font-extrabold text-lince-500">--</span><span class="text-xs uppercase text-white/60">giorni</span></div>
+            <div><span data-cd="h" class="block font-display text-5xl font-extrabold">--</span><span class="text-xs uppercase text-white/60">ore</span></div>
+            <div><span data-cd="m" class="block font-display text-5xl font-extrabold">--</span><span class="text-xs uppercase text-white/60">min</span></div>
+            <div><span data-cd="s" class="block font-display text-5xl font-extrabold">--</span><span class="text-xs uppercase text-white/60">sec</span></div>
+          </div>
+          <button type="button" id="add-calendar"
+                  class="mt-6 flex min-h-[48px] w-full items-center justify-center gap-2 rounded-xl bg-white/10 text-sm font-semibold hover:bg-white/15">
+            <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M16 3v4M8 3v4M3 10h18M12 14v4M10 16h4"/></svg>
+            Aggiungi al calendario
+          </button>
+          <p class="mt-4 text-sm text-white/70">Dopo l'arrivo: terzo tempo con vino rosso e polenta al cinghiale.</p>
+        </aside>
+      </div>
+    </section>
+
+    <!-- ============ QUICK CARDS INFO GARA ============ -->
+    <section id="percorsi" class="mx-auto max-w-6xl px-4 py-12 md:py-16" aria-labelledby="titolo-percorsi">
+      <div class="flex items-end justify-between gap-4">
+        <h2 id="titolo-percorsi" class="font-display text-4xl font-extrabold uppercase text-bosco-900">La gara in breve</h2>
+        <a href="mailto:trailsultrebbio@gmail.com" class="hidden text-sm font-medium text-bosco-800 underline underline-offset-4 sm:block">Domande? trailsultrebbio@gmail.com</a>
+      </div>
+
+      <div class="mt-6 grid gap-4 md:grid-cols-3">
+        <!-- Percorsi -->
+        <article class="rounded-3xl bg-white p-6 shadow-sm ring-1 ring-sasso-100">
+          <div class="flex items-center gap-3">
+            <span class="grid h-11 w-11 place-items-center rounded-xl bg-bosco-100 text-bosco-800" aria-hidden="true">
+              <svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19c4 0 4-6 8-6s4 6 8 6M4 13c4 0 4-8 8-8s4 8 8 8"/></svg>
+            </span>
+            <h3 class="font-display text-2xl font-bold uppercase">Percorsi</h3>
+          </div>
+          <ul class="mt-5 space-y-3">
+            <li class="flex items-baseline justify-between gap-3 border-b border-sasso-100 pb-3">
+              <span><strong class="font-display text-3xl font-extrabold text-bosco-900">19 km</strong> <span class="text-sm text-sasso-600">competitiva</span></span>
+              <span class="rounded-full bg-lince-100 px-2.5 py-0.5 text-xs font-semibold text-lince-700">Novità: a coppie</span>
+            </li>
+            <li class="flex items-baseline justify-between gap-3 border-b border-sasso-100 pb-3">
+              <span><strong class="font-display text-3xl font-extrabold text-bosco-900">10 km</strong> <span class="text-sm text-sasso-600">ludico-motoria</span></span>
+              <span class="rounded-full bg-bosco-100 px-2.5 py-0.5 text-xs font-semibold text-bosco-800">Per tutti</span>
+            </li>
+            <li class="flex items-baseline justify-between gap-3">
+              <span><strong class="font-display text-3xl font-extrabold text-bosco-900">1,2 km</strong> <span class="text-sm text-sasso-600">Kids trail</span></span>
+              <span class="rounded-full bg-sasso-100 px-2.5 py-0.5 text-xs font-semibold text-sasso-600">Bambini</span>
+            </li>
+          </ul>
+          <p class="mt-4 text-sm text-sasso-600">Quote 2025: 25 € competitiva (30 € sul posto), 10 € ludica, 5 € kids.*</p>
+        </article>
+
+        <!-- Dislivello -->
+        <article class="rounded-3xl bg-white p-6 shadow-sm ring-1 ring-sasso-100">
+          <div class="flex items-center gap-3">
+            <span class="grid h-11 w-11 place-items-center rounded-xl bg-bosco-100 text-bosco-800" aria-hidden="true">
+              <svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 20l6-10 4 6 3-4 5 8z"/></svg>
+            </span>
+            <h3 class="font-display text-2xl font-bold uppercase">Dislivello</h3>
+          </div>
+          <div class="mt-5 space-y-4">
+            <div>
+              <div class="flex items-baseline justify-between"><span class="text-sm font-medium text-sasso-600">19 km</span><strong class="font-display text-3xl font-extrabold text-bosco-900">D+ ~1.000 m*</strong></div>
+              <div class="mt-2 h-2 rounded-full bg-sasso-100"><div class="h-2 w-[85%] rounded-full bg-lince-500"></div></div>
+            </div>
+            <div class="flex items-baseline justify-between border-t border-sasso-100 pt-4">
+              <span class="text-sm font-medium text-sasso-600">Tempo massimo 19 km</span><strong class="font-display text-3xl font-extrabold text-bosco-900">4 ore*</strong>
+            </div>
+            <p class="text-sm text-sasso-600">Sentieri delle colline di Modigliana, fondo prevalentemente sterrato: servono scarpe da trail.</p>
+          </div>
+        </article>
+
+        <!-- Ristori -->
+        <article class="rounded-3xl bg-white p-6 shadow-sm ring-1 ring-sasso-100">
+          <div class="flex items-center gap-3">
+            <span class="grid h-11 w-11 place-items-center rounded-xl bg-bosco-100 text-bosco-800" aria-hidden="true">
+              <svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 3h8l-1 6a3 3 0 01-6 0zM12 12v6M8 21h8"/></svg>
+            </span>
+            <h3 class="font-display text-2xl font-bold uppercase">Ristori</h3>
+          </div>
+          <ul class="mt-5 space-y-3 text-sm">
+            <li class="flex gap-3"><span class="w-20 shrink-0 font-display text-xl font-bold text-lince-700">Percorso</span><span class="pt-0.5">Ristori lungo il tracciato: numero e posizione nel regolamento 2026</span></li>
+            <li class="flex gap-3"><span class="w-20 shrink-0 font-display text-xl font-bold text-lince-700">Arrivo</span><span class="pt-0.5">Ristoro finale al Camping La Luna sul Trebbio</span></li>
+          </ul>
+          <p class="mt-4 rounded-xl bg-lince-100 p-3 text-sm text-lince-700"><strong>Terzo tempo:</strong> vino rosso e polenta al cinghiale, come da tradizione.</p>
+        </article>
+      </div>
+      <p class="mt-4 text-xs text-sasso-600">* Dati ripresi dall'edizione 2025 e dai portali gara: da verificare sul regolamento 2026 (aggiornato al 27/08/26).</p>
+    </section>
+
+    <!-- ============ CHI SIAMO & ALLENAMENTI ============ -->
+    <section id="branco" class="bg-white py-12 md:py-16" aria-labelledby="titolo-branco">
+      <div class="mx-auto grid max-w-6xl gap-10 px-4 md:grid-cols-2 md:items-start">
+        <div>
+          <p class="text-sm font-semibold uppercase tracking-wider text-lince-700">Chi siamo</p>
+          <h2 id="titolo-branco" class="mt-2 font-display text-4xl font-extrabold uppercase leading-none text-bosco-900 md:text-5xl">Un branco,<br>non solo una squadra</h2>
+          <p class="mt-5 text-lg leading-relaxed text-sasso-800">
+            Siamo Le Linci, il branco podistico della Polisportiva Santa Lucia di Faenza. Il gruppo è nato nel 2013
+            e, come una palla di neve rotolante, non si è più fermato: oggi corriamo su strada e sui sentieri,
+            organizziamo gare e ci ritroviamo ogni settimana. Pelo fulgido, graffi solo in gara.
+          </p>
+          <h3 class="mt-8 font-display text-2xl font-bold uppercase text-bosco-900">Gli eventi del Branco</h3>
+          <ul class="mt-3 grid gap-3 sm:grid-cols-2">
+            <li class="rounded-2xl bg-sasso-50 p-4"><span class="text-xs font-semibold uppercase tracking-wider text-lince-700">Luglio</span><strong class="block font-display text-2xl font-bold text-bosco-900">Sveglia Presto Running</strong><span class="text-sm text-sasso-600">Saluto al sole alle 5:30, partenza alle 5:59</span></li>
+            <li class="rounded-2xl bg-sasso-50 p-4"><span class="text-xs font-semibold uppercase tracking-wider text-lince-700">Settembre</span><strong class="block font-display text-2xl font-bold text-bosco-900">Meeting Run</strong><span class="text-sm text-sasso-600">La corsa di fine estate</span></li>
+            <li class="rounded-2xl bg-sasso-50 p-4"><span class="text-xs font-semibold uppercase tracking-wider text-lince-700">Novembre</span><strong class="block font-display text-2xl font-bold text-bosco-900">Trail sul Trebbio</strong><span class="text-sm text-sasso-600">La nostra gara sui sentieri di Modigliana</span></li>
+            <li class="rounded-2xl bg-sasso-50 p-4"><span class="text-xs font-semibold uppercase tracking-wider text-lince-700">Tutto l'anno</span><strong class="block font-display text-2xl font-bold text-bosco-900">Notturne Trail &amp; Birrabranco</strong><span class="text-sm text-sasso-600">Una notturna al mese, e poi si brinda</span></li>
+          </ul>
+        </div>
+
+        <div class="rounded-3xl bg-bosco-900 p-6 text-white md:p-8">
+          <h3 class="font-display text-3xl font-extrabold uppercase">Allenamenti del Branco</h3>
+          <p class="mt-1 text-sm text-white/60">Non serve essere veloci: serve esserci.</p>
+          <div class="mt-6 rounded-2xl bg-white/5 p-5 ring-1 ring-white/10">
+            <p class="text-xs font-semibold uppercase tracking-wider text-lince-500">Ogni lunedì · dalle 18:00</p>
+            <p class="mt-1 font-display text-4xl font-extrabold uppercase leading-none">Il Linciodromo</p>
+            <p class="mt-3 text-white/80">Ci ritroviamo a correre attorno al Parco Bucci di Faenza. Si gira in senso orario; chi arriva più tardi fa il primo giro in senso antiorario e si unisce al branco.</p>
+            <a href="https://www.google.com/maps/search/?api=1&query=Parco+Bucci+Faenza" target="_blank" rel="noopener"
+               class="mt-4 inline-flex min-h-[44px] items-center gap-1 text-sm font-semibold text-lince-500 underline underline-offset-4">Apri Parco Bucci su Maps ↗</a>
+          </div>
+          <ul class="mt-4 divide-y divide-white/10">
+            <li class="flex items-center gap-4 py-4">
+              <span class="w-24 shrink-0 font-display text-xl font-bold uppercase text-lince-500">1 al mese</span>
+              <span class="flex-1"><strong class="block">Notturne Trail</strong><span class="text-sm text-white/60">Frontale accesa, sentieri delle colline faentine</span></span>
+            </li>
+            <li class="flex items-center gap-4 py-4">
+              <span class="w-24 shrink-0 font-display text-xl font-bold uppercase text-lince-500">Weekend</span>
+              <span class="flex-1"><strong class="block">Gare e uscite di gruppo</strong><span class="text-sm text-white/60">Il programma lo trovi su Facebook e Instagram</span></span>
+            </li>
+          </ul>
+          <a href="#contatti" class="mt-6 inline-flex min-h-[48px] w-full items-center justify-center rounded-xl bg-lince-500 font-semibold text-bosco-950 hover:bg-lince-600">
+            Voglio unirmi al branco
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ CONTATTI & MODULO RAPIDO ============ -->
+    <section id="contatti" class="mx-auto max-w-6xl px-4 py-12 md:py-16" aria-labelledby="titolo-contatti">
+      <div class="grid gap-10 md:grid-cols-[1fr_1.2fr]">
+        <div>
+          <h2 id="titolo-contatti" class="font-display text-4xl font-extrabold uppercase text-bosco-900">Restiamo in contatto</h2>
+          <p class="mt-3 text-lg text-sasso-800">Le novità di tutti i giorni le trovi sui social. Qui sotto puoi chiederci informazioni o ricevere una mail quando apriamo le iscrizioni alle nostre gare.</p>
+          <p class="mt-3 text-sm text-sasso-600">Email: <a class="font-medium text-bosco-800 underline" href="mailto:lelinci.brancopodistico@gmail.com">lelinci.brancopodistico@gmail.com</a><br>Solo per il Trail: <a class="font-medium text-bosco-800 underline" href="mailto:trailsultrebbio@gmail.com">trailsultrebbio@gmail.com</a></p>
+
+          <ul class="mt-6 space-y-3">
+            <li>
+              <a href="https://www.instagram.com/lelinci.brancopodistico/" target="_blank" rel="noopener"
+                 class="flex min-h-[56px] items-center gap-4 rounded-2xl bg-white px-4 shadow-sm ring-1 ring-sasso-100 hover:ring-lince-500">
+                <svg class="h-6 w-6 text-bosco-800" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg>
+                <span><strong class="block">Instagram</strong><span class="text-sm text-sasso-600">@lelinci.brancopodistico</span></span>
+              </a>
+            </li>
+            <li>
+              <a href="https://www.facebook.com/lincipodismo/" target="_blank" rel="noopener"
+                 class="flex min-h-[56px] items-center gap-4 rounded-2xl bg-white px-4 shadow-sm ring-1 ring-sasso-100 hover:ring-lince-500">
+                <svg class="h-6 w-6 text-bosco-800" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M14 8h3V4h-3a4 4 0 00-4 4v2H8v4h2v8h4v-8h3l1-4h-4V8z"/></svg>
+                <span><strong class="block">Facebook</strong><span class="text-sm text-sasso-600">Le Linci - Branco Podistico</span></span>
+              </a>
+            </li>
+            <li>
+              <a href="https://x.com/le_linci" target="_blank" rel="noopener"
+                 class="flex min-h-[56px] items-center gap-4 rounded-2xl bg-white px-4 shadow-sm ring-1 ring-sasso-100 hover:ring-lince-500">
+                <svg class="h-6 w-6 text-bosco-800" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M4 3h4.5l4 5.6L17 3h3l-6.1 7.5L21 21h-4.5l-4.4-6.1L7 21H4l6.6-8.1z"/></svg>
+                <span><strong class="block">X / Twitter</strong><span class="text-sm text-sasso-600">@le_linci</span></span>
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Modulo: gestito da Netlify Forms, nessun server da mantenere -->
+        <form name="contatti" method="POST" data-netlify="true" netlify-honeypot="sito-web" id="form-contatti"
+              class="rounded-3xl bg-white p-6 shadow-sm ring-1 ring-sasso-100 md:p-8">
+          <input type="hidden" name="form-name" value="contatti">
+          <p class="hidden"><label>Non compilare: <input name="sito-web" tabindex="-1" autocomplete="off"></label></p>
+
+          <fieldset>
+            <legend class="font-display text-2xl font-bold uppercase text-bosco-900">Cosa ti interessa?</legend>
+            <div class="mt-3 grid grid-cols-1 gap-2 sm:grid-cols-3">
+              <label class="flex min-h-[48px] cursor-pointer items-center gap-2 rounded-xl border border-sasso-100 px-3 has-[:checked]:border-lince-500 has-[:checked]:bg-lince-100">
+                <input type="radio" name="interesse" value="Avvisi gare" class="accent-lince-600" checked> Avvisi gare
+              </label>
+              <label class="flex min-h-[48px] cursor-pointer items-center gap-2 rounded-xl border border-sasso-100 px-3 has-[:checked]:border-lince-500 has-[:checked]:bg-lince-100">
+                <input type="radio" name="interesse" value="Allenamenti" class="accent-lince-600"> Allenamenti
+              </label>
+              <label class="flex min-h-[48px] cursor-pointer items-center gap-2 rounded-xl border border-sasso-100 px-3 has-[:checked]:border-lince-500 has-[:checked]:bg-lince-100">
+                <input type="radio" name="interesse" value="Info Trebbio" class="accent-lince-600"> Info Trebbio
+              </label>
+            </div>
+          </fieldset>
+
+          <div class="mt-5 grid gap-4 sm:grid-cols-2">
+            <label class="block">
+              <span class="text-sm font-medium">Nome</span>
+              <input name="nome" type="text" autocomplete="given-name" required
+                     class="mt-1 block min-h-[48px] w-full rounded-xl border border-sasso-100 bg-sasso-50 px-3 text-base focus:border-lince-500 focus:outline-none focus:ring-2 focus:ring-lince-500/30">
+            </label>
+            <label class="block">
+              <span class="text-sm font-medium">Email</span>
+              <input name="email" type="email" autocomplete="email" inputmode="email" required
+                     class="mt-1 block min-h-[48px] w-full rounded-xl border border-sasso-100 bg-sasso-50 px-3 text-base focus:border-lince-500 focus:outline-none focus:ring-2 focus:ring-lince-500/30">
+            </label>
+          </div>
+          <label class="mt-4 block">
+            <span class="text-sm font-medium">Messaggio <span class="text-sasso-600">(facoltativo)</span></span>
+            <textarea name="messaggio" rows="3"
+                      class="mt-1 block w-full rounded-xl border border-sasso-100 bg-sasso-50 px-3 py-2 text-base focus:border-lince-500 focus:outline-none focus:ring-2 focus:ring-lince-500/30"></textarea>
+          </label>
+          <label class="mt-4 flex items-start gap-3 text-sm text-sasso-600">
+            <input type="checkbox" name="privacy" required class="mt-1 h-5 w-5 shrink-0 accent-lince-600">
+            <span>Acconsento al trattamento dei dati per ricevere risposta e comunicazioni dell'associazione (<a href="#privacy" class="underline">informativa privacy</a>).</span>
+          </label>
+          <button type="submit"
+                  class="mt-6 flex min-h-[52px] w-full items-center justify-center rounded-xl bg-bosco-900 font-semibold text-white hover:bg-bosco-800 disabled:opacity-60">
+            Invia
+          </button>
+          <p id="form-esito" class="mt-3 hidden rounded-xl p-3 text-sm" role="status"></p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="bg-bosco-950 text-white/70">
+    <div class="mx-auto grid max-w-6xl gap-8 px-4 py-10 text-sm md:grid-cols-3">
+      <div>
+        <p class="font-display text-2xl font-extrabold uppercase text-white">Le Linci</p>
+        <p class="mt-1">Branco Podistico della<br><strong class="text-white">Pol. Dil. Santa Lucia</strong></p>
+        <!-- TODO: aggiungere codice fiscale / P.IVA dell'associazione -->
+        <p class="mt-3">Via S. Mamante, 71 · 48018 Faenza (RA)<br><a href="mailto:lelinci.brancopodistico@gmail.com" class="hover:text-lince-500">lelinci.brancopodistico@gmail.com</a></p>
+      </div>
+      <nav aria-label="Link utili">
+        <p class="font-semibold uppercase tracking-wider text-white">Link utili</p>
+        <ul class="mt-3 space-y-2">
+          <li><a href="#gara" class="hover:text-lince-500">Trail sul Trebbio 2026</a></li>
+          <li><a href="#branco" class="hover:text-lince-500">Allenamenti</a></li>
+          <li><a href="#archivio" data-placeholder="Qui c'è l'archivio: calendario storico, risultati, rassegna stampa e articoli degli anni passati." class="hover:text-lince-500">Archivio, rassegna stampa e foto</a></li>
+          <li><a href="#privacy" data-placeholder="Qui c'è l'informativa privacy." id="privacy" class="hover:text-lince-500">Privacy</a></li>
+        </ul>
+      </nav>
+      <div>
+        <p class="font-semibold uppercase tracking-wider text-white">Seguici</p>
+        <div class="mt-3 flex gap-3">
+          <a href="https://www.instagram.com/lelinci.brancopodistico/" target="_blank" rel="noopener" aria-label="Instagram" class="grid h-12 w-12 place-items-center rounded-full bg-white/10 hover:bg-lince-500 hover:text-bosco-950">
+            <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/></svg>
+          </a>
+          <a href="https://www.facebook.com/lincipodismo/" target="_blank" rel="noopener" aria-label="Facebook" class="grid h-12 w-12 place-items-center rounded-full bg-white/10 hover:bg-lince-500 hover:text-bosco-950">
+            <svg class="h-5 w-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M14 8h3V4h-3a4 4 0 00-4 4v2H8v4h2v8h4v-8h3l1-4h-4V8z"/></svg>
+          </a>
+          <a href="https://x.com/le_linci" target="_blank" rel="noopener" aria-label="X / Twitter" class="grid h-12 w-12 place-items-center rounded-full bg-white/10 hover:bg-lince-500 hover:text-bosco-950">
+            <svg class="h-5 w-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M4 3h4.5l4 5.6L17 3h3l-6.1 7.5L21 21h-4.5l-4.4-6.1L7 21H4l6.6-8.1z"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="border-t border-white/10">
+      <p class="mx-auto max-w-6xl px-4 py-5 text-xs">© <span id="anno">2026</span> Le Linci - Branco Podistico · Pol. Dil. Santa Lucia, Faenza. Sito senza pubblicità, senza cookie di profilazione.</p>
+    </div>
+  </footer>
+
+  <!-- ============ BARRA CTA FISSA (solo mobile, zona pollice) ============ -->
+  <div id="sticky-cta"
+       class="fixed inset-x-0 bottom-0 z-40 translate-y-full border-t border-white/10 bg-bosco-900/95 px-4 pt-3 backdrop-blur transition-transform duration-300 md:hidden"
+       style="padding-bottom: calc(0.75rem + env(safe-area-inset-bottom));">
+    <div class="flex items-center gap-3">
+      <div class="min-w-0 flex-1 text-white">
+        <p class="truncate font-display text-lg font-bold uppercase leading-tight">Trail sul Trebbio</p>
+        <p class="text-xs text-white/60">Dom 15 nov · ore 9:30 · Modigliana</p>
+      </div>
+      <a href="#iscrizione" class="js-iscrizione inline-flex min-h-[52px] items-center rounded-xl bg-lince-500 px-5 font-display text-xl font-extrabold uppercase text-bosco-950">Iscriviti</a>
+    </div>
+  </div>
+
+  <!-- Avviso per i link segnaposto del mockup -->
+  <div id="toast" role="status" aria-live="polite"
+       class="pointer-events-none fixed inset-x-4 top-24 z-50 mx-auto max-w-sm translate-y-[-1rem] rounded-2xl bg-sasso-800 px-4 py-3 text-sm text-white opacity-0 shadow-xl transition"></div>
+
+  <script>
+    // ---- Dati gara: unico punto da aggiornare per la prossima edizione ----
+    const GARA = {
+      titolo: 'Trail sul Trebbio',
+      start: '2026-11-15T09:30:00+01:00',
+      durataOre: 5,
+      luogo: 'Camping La Luna sul Trebbio, Modigliana (FC)'
+    };
+
+    // Countdown
+    (function () {
+      const target = new Date(GARA.start).getTime();
+      const el = k => document.querySelector('[data-cd="' + k + '"]');
+      const pad = n => String(n).padStart(2, '0');
+      function tick() {
+        const diff = Math.max(0, target - Date.now());
+        el('d').textContent = Math.floor(diff / 864e5);
+        el('h').textContent = pad(Math.floor(diff / 36e5) % 24);
+        el('m').textContent = pad(Math.floor(diff / 6e4) % 60);
+        el('s').textContent = pad(Math.floor(diff / 1e3) % 60);
+      }
+      tick();
+      setInterval(tick, 1000);
+    })();
+
+    // Aggiungi al calendario (file .ics generato al volo, funziona su iPhone e Android)
+    document.getElementById('add-calendar').addEventListener('click', function () {
+      const fmt = d => d.toISOString().replace(/[-:]/g, '').replace(/\.\d{3}/, '');
+      const start = new Date(GARA.start);
+      const end = new Date(start.getTime() + GARA.durataOre * 36e5);
+      const ics = [
+        'BEGIN:VCALENDAR', 'VERSION:2.0', 'PRODID:-//Le Linci//Trail//IT',
+        'BEGIN:VEVENT',
+        'UID:trail-sul-trebbio-' + start.getFullYear() + '@corriconlelinci.com',
+        'DTSTAMP:' + fmt(new Date()),
+        'DTSTART:' + fmt(start), 'DTEND:' + fmt(end),
+        'SUMMARY:' + GARA.titolo,
+        'LOCATION:' + GARA.luogo.replace(/,/g, '\\,'),
+        'END:VEVENT', 'END:VCALENDAR'
+      ].join('\r\n');
+      const a = document.createElement('a');
+      a.href = URL.createObjectURL(new Blob([ics], { type: 'text/calendar' }));
+      a.download = 'trail-sul-trebbio.ics';
+      a.click();
+      URL.revokeObjectURL(a.href);
+    });
+
+    // Barra CTA mobile: compare quando il pulsante principale esce dallo schermo
+    (function () {
+      const bar = document.getElementById('sticky-cta');
+      const hero = document.getElementById('iscrizione');
+      if (!('IntersectionObserver' in window)) { bar.classList.remove('translate-y-full'); return; }
+      new IntersectionObserver(([e]) => {
+        bar.classList.toggle('translate-y-full', e.isIntersecting || e.boundingClientRect.top > 0);
+      }).observe(hero);
+    })();
+
+    // Toast per i link segnaposto del mockup
+    const toast = document.getElementById('toast');
+    let toastTimer;
+    function showToast(msg) {
+      toast.textContent = msg;
+      toast.classList.remove('opacity-0', 'translate-y-[-1rem]');
+      clearTimeout(toastTimer);
+      toastTimer = setTimeout(() => toast.classList.add('opacity-0', 'translate-y-[-1rem]'), 3200);
+    }
+    document.querySelectorAll('[data-placeholder]').forEach(a =>
+      a.addEventListener('click', e => { e.preventDefault(); showToast('Mockup · ' + a.dataset.placeholder); })
+    );
+    // Tutti i pulsanti "Iscriviti" portano alla stessa destinazione del CTA principale
+    document.querySelectorAll('.js-iscrizione:not(#iscrizione)').forEach(a =>
+      a.addEventListener('click', e => { e.preventDefault(); document.getElementById('iscrizione').click(); })
+    );
+
+    // Invio modulo (Netlify Forms) senza ricaricare la pagina
+    document.getElementById('form-contatti').addEventListener('submit', async function (e) {
+      e.preventDefault();
+      const form = e.target, esito = document.getElementById('form-esito'), btn = form.querySelector('button');
+      const ok = msg => { esito.textContent = msg; esito.className = 'mt-3 rounded-xl bg-bosco-100 p-3 text-sm text-bosco-800'; };
+      btn.disabled = true;
+      if (location.protocol === 'file:') {
+        ok('Anteprima: nel sito online il messaggio arriva direttamente nella casella email dell\'associazione.');
+        form.reset(); btn.disabled = false; return;
+      }
+      try {
+        const res = await fetch('/', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+          body: new URLSearchParams(new FormData(form)).toString()
+        });
+        if (!res.ok) throw new Error(res.status);
+        ok('Grazie! Ti rispondiamo appena rientriamo dal Linciodromo. Buone corse!');
+        form.reset();
+      } catch (err) {
+        esito.textContent = 'Invio non riuscito. Riprova o scrivici su Instagram.';
+        esito.className = 'mt-3 rounded-xl bg-lince-100 p-3 text-sm text-lince-700';
+      } finally {
+        btn.disabled = false;
+      }
+    });
+
+    document.getElementById('anno').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
