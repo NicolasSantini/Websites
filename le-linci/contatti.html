@@ -8,9 +8,8 @@
   <meta name="theme-color" content="#14224a">
   <link rel="icon" type="image/png" href="assets/img/favicon.png">
   <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=Caveat:wght@600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="preload" href="assets/fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="assets/fonts/barlow-condensed-800-latin.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="assets/styles.css">
   <script src="assets/site.js" defer></script>
 </head>
@@ -88,9 +87,12 @@
       </div>
     </div>
 
-    <form name="contatti" method="POST" data-netlify="true" netlify-honeypot="sito-web" class="card self-start md:p-8">
-      <input type="hidden" name="form-name" value="contatti">
-      <p class="hidden"><label>Non compilare: <input name="sito-web" tabindex="-1" autocomplete="off"></label></p>
+    <!-- FormSubmit inoltra i messaggi a questa casella. Al primo invio arriva un'email di attivazione da confermare una volta sola. -->
+    <form action="https://formsubmit.co/lelinci.brancopodistico@gmail.com" method="POST" data-modulo class="card self-start md:p-8">
+      <input type="hidden" name="_subject" value="Nuovo messaggio dal sito delle Linci">
+      <input type="hidden" name="_template" value="table">
+      <input type="hidden" name="_captcha" value="false">
+      <p class="hidden"><label>Non compilare: <input name="_honey" tabindex="-1" autocomplete="off"></label></p>
       <h2 class="font-display text-3xl font-extrabold uppercase">Scrivici</h2>
       <fieldset class="mt-4">
         <legend class="text-sm font-semibold">Di cosa si tratta?</legend>
@@ -124,8 +126,9 @@
       <!-- TODO: far validare il testo dal direttivo prima della pubblicazione -->
       <div class="prosa text-blu-800/90">
         <p>Titolare del trattamento è la Pol. Dil. Santa Lucia, Via S. Mamante 71, 48018 Faenza (RA), <a href="mailto:lelinci.brancopodistico@gmail.com">lelinci.brancopodistico@gmail.com</a>.</p>
-        <p>I dati inviati con i moduli di questo sito (nome, email, messaggio) servono solo a risponderti o a mandarti gli avvisi che hai chiesto. Non vengono ceduti a terzi e puoi chiederne la cancellazione in qualsiasi momento scrivendo all'indirizzo qui sopra.</p>
-        <p>Il sito non usa cookie di profilazione né pubblicità. Le iscrizioni alle gare passano dai moduli Google indicati nelle pagine degli eventi, con la loro informativa.</p>
+        <p>I messaggi del modulo contatti (nome, email, messaggio) servono solo a risponderti: vengono inoltrati alla casella dell'associazione tramite il servizio FormSubmit e non sono ceduti a terzi.</p>
+        <p>La newsletter è gestita da WordPress.com (Automattic): ti iscrivi confermando l'email e puoi cancellarti dal link in fondo a ogni messaggio. Le iscrizioni alle gare passano dai moduli Google indicati nelle pagine degli eventi, con la loro informativa.</p>
+        <p>Il sito non usa cookie né pubblicità. Articoli e foto vengono letti dal blog WordPress.com delle Linci; i video YouTube si caricano solo se premi “play”. Per cancellare i tuoi dati scrivi all'indirizzo qui sopra.</p>
       </div>
     </div>
   </section>

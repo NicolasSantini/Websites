@@ -8,9 +8,8 @@
   <meta name="theme-color" content="#14224a">
   <link rel="icon" type="image/png" href="assets/img/favicon.png">
   <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=Caveat:wght@600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="preload" href="assets/fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="assets/fonts/barlow-condensed-800-latin.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="assets/styles.css">
   <script src="assets/site.js" defer></script>
 </head>
@@ -103,6 +102,9 @@
               <li class="chip bg-blu-100 py-1 text-blu-900">Docce disponibili</li>
             </ul>
             <p class="mt-3 text-sm">Info: <a href="mailto:sottolalunaelatorre@gmail.com" class="font-medium text-blu-700 underline">sottolalunaelatorre@gmail.com</a></p>
+            <a href="https://drive.google.com/file/d/1xgQOlcUxPxy1Migrs_asoB4_IcZAZZdB/view?usp=drivesdk" target="_blank" rel="noopener" class="btn-scuro mt-4">Modulo d'iscrizione da compilare ↗</a>
+            <p class="mt-5 text-sm font-semibold">Le locandine dal 2015 a oggi</p>
+            <div data-wp-galleria="sotto-la-luna-e-la-torre" class="mt-4 grid grid-cols-3 gap-2 sm:grid-cols-4"></div>
           </div>
         </article>
 
@@ -118,6 +120,8 @@
               <li class="chip bg-blu-100 py-1 text-blu-900">Bambini fino a 10 anni gratis</li>
             </ul>
             <p class="mt-3 text-sm">Info: <a href="mailto:svegliaprestorunning@gmail.com" class="font-medium text-blu-700 underline">svegliaprestorunning@gmail.com</a></p>
+            <a href="https://drive.google.com/file/d/1VrThlI1m5y2J1d18BBGA5_mlem0XG8a8/view?usp=sharing" target="_blank" rel="noopener" class="btn-scuro mt-4">Liberatoria per i minori ↗</a>
+            <div data-wp-galleria="sveglia-presto-running" class="mt-4 grid grid-cols-3 gap-2 sm:grid-cols-4"></div>
           </div>
         </article>
 
@@ -140,20 +144,47 @@
   <!-- ============ VITA DI BRANCO ============ -->
   <section class="contenitore py-12" aria-labelledby="titolo-vita">
     <h2 id="titolo-vita" class="titolo">Vita di branco</h2>
-    <div class="mt-6 grid gap-4 md:grid-cols-3">
+    <div class="mt-6 grid gap-4 md:grid-cols-2">
       <article class="card">
         <h3 class="font-display text-2xl font-bold uppercase">Birronde</h3>
-        <p class="mt-2 text-blu-800/90">D'estate andiamo a correre da chi ci ristora con un bel boccalone di birra. Ogni anno cambia nome: Corse Luppoline, Scorribirra, Sgambirrette, Trinka Branko, Birraccozzi, Maratrinka…</p>
+        <p class="mt-2 text-blu-800/90">D'estate andiamo a trovare chi ci ristora con un bel boccalone di birra. Ogni anno cambia nome:
+          Le Sgambate Dissetanti (2016), Le Corse Luppoline (2017), Spedizioni Triplo Malto (2018), Scorribirra (2019), Sgambirrette (2020),
+          Trinka Branko (2021), Birraccozzi (2022), Maratrinka (2023), Birronde (2026).</p>
+        <div data-wp-galleria="corse-luppoline" data-max="9" class="mt-4 grid grid-cols-3 gap-2 sm:grid-cols-4"></div>
+        <a href="notizia.html?pagina=corse-luppoline" class="mt-3 inline-flex min-h-[44px] items-center text-sm font-semibold text-blu-700 underline underline-offset-4">Tutte le foto delle Birronde →</a>
       </article>
       <article class="card">
-        <h3 class="font-display text-2xl font-bold uppercase">Aperitivo di fine anno</h3>
-        <p class="mt-2 text-blu-800/90">Tutti gli anni ci facciamo gli auguri per un anno giallo e blu (o blu e giallo), col passo felpato. Negli ultimi anni con coretti e il sorteggione di Scream.</p>
+        <h3 class="font-display text-2xl font-bold uppercase">Aperitivo di fine anno solare</h3>
+        <p class="mt-2 text-blu-800/90">Tutti gli anni ci facciamo gli auguri per un anno giallo e blu (o blu e giallo), fulgido e col passo felpato. Negli ultimi anni con i coretti e il sorteggione di Scream.</p>
+        <div data-wp-galleria="aperitivo-di-natale" class="mt-4 grid grid-cols-3 gap-2 sm:grid-cols-4"></div>
+        <a href="notizia.html?pagina=aperitivo-di-natale" class="mt-3 inline-flex min-h-[44px] items-center text-sm font-semibold text-blu-700 underline underline-offset-4">La pagina completa →</a>
+      </article>
+      <article class="card">
+        <h3 class="font-display text-2xl font-bold uppercase">Cena autunnale annuale</h3>
+        <p class="mt-2 text-blu-800/90">A novembre le linci si radunano e sgranocchiano qualcosa: paella nel 2015, spiedini nel 2016, paellata nel 2017.</p>
+        <div data-wp-galleria="cena-di-fine-quasi-anno" data-max="8" class="mt-4 grid grid-cols-3 gap-2 sm:grid-cols-4"></div>
       </article>
       <article class="card">
         <h3 class="font-display text-2xl font-bold uppercase">Linci on Mountains</h3>
-        <p class="mt-2 text-blu-800/90">Una volta all'anno si va per rifugi, carne e vino rosso: una notte nei boschi, roba da felini selvaggi.</p>
+        <p class="mt-2 text-blu-800/90">Una volta all'anno si va per rifugi, carne e vino rosso: si dorme al rifugio e via sulla strada del ritorno. Roba da felini selvaggi.</p>
+        <ul class="mt-3 text-sm"><li><strong>2018</strong> · Rifugio Gralli</li><li><strong>2017</strong> · Capanna Marconi</li></ul>
+        <a href="notizia.html?pagina=linci-on-mountains" class="mt-3 inline-flex min-h-[44px] items-center text-sm font-semibold text-blu-700 underline underline-offset-4">La pagina completa →</a>
+      </article>
+      <article class="card md:col-span-2">
+        <h3 class="font-display text-2xl font-bold uppercase">Millennium Triathlon</h3>
+        <p class="mt-2 text-blu-800/90">A giugno parte il Millennium Triathlon: le linci hanno visto nascere questa manifestazione e da sempre collaborano con Gianni e Stefania del Centro Fitness Millennium di Fognano.</p>
+        <div data-wp-galleria="millennium-triathlon" class="mt-4 grid grid-cols-3 gap-2 sm:grid-cols-4"></div>
+        <p class="mt-3 text-sm">Locandine, classifiche e foto per anno:
+          <a class="font-medium text-blu-700 underline" href="notizia.html?pagina=2014-2">2014</a> ·
+          <a class="font-medium text-blu-700 underline" href="notizia.html?pagina=2015-2">2015</a> ·
+          <a class="font-medium text-blu-700 underline" href="notizia.html?pagina=2016-2">2016</a> ·
+          <a class="font-medium text-blu-700 underline" href="notizia.html?pagina=2017-2">2017</a> ·
+          <a class="font-medium text-blu-700 underline" href="notizia.html?pagina=2018-3">2018</a> ·
+          <a class="font-medium text-blu-700 underline" href="notizia.html?pagina=2019-2">2019</a></p>
       </article>
     </div>
+    <p class="mt-4 text-sm">E poi le <a href="notizia.html?pagina=vicende-al-volo" class="font-semibold text-blu-700 underline">vicende al volo</a>,
+      le serate che non si ripetono ma vanno colte al volo, come la <a href="notizia.html?pagina=serata-barrette" class="font-semibold text-blu-700 underline">serata barrette</a>.</p>
     <figure class="mt-6">
       <img src="assets/img/sveglia-ristoro.jpg" alt="Lo staff delle Linci al ristoro della Sveglia Presto Running 2026" width="1200" height="676" loading="lazy" class="aspect-[16/7] w-full rounded-3xl object-cover">
       <figcaption class="mt-2 text-sm text-blu-800/80">Lo staff più fulgido della zona alla Sveglia Presto Running 2026.</figcaption>

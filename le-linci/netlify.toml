@@ -1,3 +1,4 @@
+# Configurazione per Netlify (facoltativa: il sito funziona uguale su GitHub Pages o Cloudflare Pages).
 # Sito statico: nessuna build sul server, si pubblica la cartella così com'è.
 [build]
   publish = "."
@@ -34,10 +35,6 @@
   to = "/branco"
   status = 301
 [[redirects]]
-  from = "/graduatoria/*"
-  to = "/branco#campionato"
-  status = 301
-[[redirects]]
   from = "/abbigliamento/*"
   to = "/branco#abbigliamento"
   status = 301
@@ -46,14 +43,19 @@
   to = "/contatti"
   status = 301
 
-# Articoli del blog (/2026/10/01/titolo/) e altre pagine: restano su WordPress.com
+# Articoli del blog (/2026/10/01/titolo/): si leggono in notizia.html, che li prende da WordPress.com.
+# Gli altri vecchi indirizzi li gestisce 404.html (stesso comportamento su GitHub Pages).
 [[redirects]]
   from = "/:anno/:mese/:giorno/:slug/*"
-  to = "https://corriconlelinci.wordpress.com/:anno/:mese/:giorno/:slug/"
+  to = "/notizia.html?articolo=:slug"
+  status = 301
+[[redirects]]
+  from = "/graduatoria/*"
+  to = "/notizia.html?pagina=graduatoria"
   status = 301
 [[redirects]]
   from = "/rassegna-stampa/*"
-  to = "https://corriconlelinci.wordpress.com/rassegna-stampa/"
+  to = "/notizia.html?pagina=rassegna-stampa"
   status = 301
 [[redirects]]
   from = "/category/*"

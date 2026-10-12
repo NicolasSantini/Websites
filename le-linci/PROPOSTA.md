@@ -70,7 +70,7 @@ voci stanno tutte in una riga sempre visibile, senza menu a scomparsa.
 | Novità quotidiane | Restano sui social, come già avviene |
 
 **Nessun link si rompe.** Gli indirizzi vecchi già stampati sulle locandine o condivisi sui social
-(per esempio `/effemeride/trail-sul-trebbio/`) vengono reindirizzati alle nuove pagine (`netlify.toml`).
+(per esempio `/effemeride/trail-sul-trebbio/`) vengono reindirizzati alle nuove pagine (`404.html`, funziona su qualsiasi hosting).
 Gli articoli restano su `corriconlelinci.wordpress.com`, che dopo il passaggio del dominio continua a funzionare
 gratis come archivio, senza migrare nulla a mano.
 
@@ -106,13 +106,13 @@ Instagram / Facebook / WhatsApp / Google "trail sul trebbio"
 
 | Voce | Oggi: WordPress.com gratuito (+ dominio) | WordPress.com senza pubblicità (piano Personal) | **Nuovo: sito statico (Jamstack)** |
 |---|---|---|---|
-| Hosting | 0 € | incluso nel piano | **0 €** (Netlify / Cloudflare Pages, piano gratuito) |
+| Hosting | 0 € | incluso nel piano | **0 €** (GitHub Pages, oppure Netlify / Cloudflare Pages: piani gratuiti) |
 | Piano / abbonamento | 0 € | ~48 €/anno ¹ | **0 €** |
 | Dominio `.com` | ~15–25 €/anno ¹ ² | incluso il 1° anno, poi ~20 €/anno ¹ | **~11–12 €/anno** (Cloudflare Registrar / Porkbun, a prezzo di costo) |
 | Pubblicità e banner della piattaforma | **Sì**, fino a ~30% dello schermo da telefono | No | **No** |
 | Aggiornamenti tema, plugin, sicurezza | A carico della piattaforma, temi limitati | A carico della piattaforma | **Nessuno**: HTML statico, niente da aggiornare né da attaccare |
 | Velocità da mobile | Pagine pesanti (temi, script, pubblicità) | Media | **Molto alta**: una pagina leggera servita da CDN |
-| Modulo contatti | Limitato | Limitato | Netlify Forms (gratis fino a 100 invii/mese) con avviso via email |
+| Modulo contatti | Limitato | Limitato | FormSubmit (gratuito) inoltra i messaggi alla casella delle Linci |
 | Certificato HTTPS | Incluso | Incluso | Incluso, automatico |
 | **Totale annuo** | **~15–25 €, con pubblicità** | **~48–70 €** | **~12 €, senza pubblicità** |
 
@@ -127,16 +127,17 @@ Con il sito statico la pubblicità sparisce e l'unico costo fisso resta il rinno
 ### Perché "zero manutenzione" è realistico
 
 - **Niente da aggiornare:** nessun CMS, plugin o database. Le pagine HTML non "invecchiano" e non si possono bucare come un WordPress non aggiornato.
-- **Niente server:** Netlify o Cloudflare servono i file gratis da una rete globale; il certificato HTTPS si rinnova da solo.
+- **Niente server:** GitHub Pages (o Netlify/Cloudflare) serve i file gratis; il certificato HTTPS si rinnova da solo.
+- **Le notizie si scrivono come oggi:** articoli, foto, newsletter (oltre 400 iscritti) e commenti restano su WordPress.com, anche dall'app. Il nuovo sito li legge da lì e li mostra senza pubblicità. Dettagli in [`GESTIONE.md`](./GESTIONE.md).
 - **Aggiornare una gara è semplice:** i dati del Trebbio sono in un solo blocco del file (`GARA` + testi della sezione hero). Per l'edizione 2027 bastano 10 minuti, li posso fare io.
 - **Le notizie restano sui social**, dove il direttivo pubblica già: il sito non chiede altro lavoro.
 - **Opzionale, più avanti:** un pannello di modifica semplice (Decap CMS) se qualcuno del direttivo vuole aggiornare i testi da solo.
 
 ### Piano di passaggio, senza rischi e senza disturbare il Trebbio
 
-1. **Adesso (ottobre):** il mockup è online su un indirizzo di prova (`lelinci-mockup.netlify.app`). Il sito attuale non viene toccato.
+1. **Adesso (ottobre):** il sito è online su un indirizzo di prova gratuito (`nicolassantini.github.io/Websites/`). Il sito attuale non viene toccato.
 2. **Dopo il 15 novembre:** esporto i contenuti da WordPress (Strumenti → Esporta, un file XML), costruisco le pagine Gare, Branco e Archivio e le faccio verificare a Davide.
-3. **Passaggio:** cambio i DNS del dominio verso Netlify (5 minuti, reversibile). Il vecchio sito resta raggiungibile all'indirizzo `*.wordpress.com` come copia di sicurezza.
+3. **Passaggio:** punto il dominio sul nuovo hosting (5 minuti, reversibile). Il vecchio sito resta raggiungibile all'indirizzo `*.wordpress.com` come copia di sicurezza.
 4. **Facoltativo:** trasferimento del dominio da WordPress.com a Cloudflare Registrar per ridurre il rinnovo a ~11 €/anno.
 
 ### Testo per spiegare il risparmio a Davide
@@ -144,8 +145,8 @@ Con il sito statico la pubblicità sparisce e l'unico costo fisso resta il rinno
 > Oggi il sito è gratuito, ma il prezzo lo pagano i vostri runner: banner e avvisi della piattaforma che da
 > telefono coprono le informazioni della gara. Per toglierli restando su WordPress.com servirebbe un piano da
 > circa 48 € l'anno.
-> Con la soluzione che vi propongo il sito diventa un insieme di pagine leggere ospitate gratis (Netlify o
-> Cloudflare, gli stessi servizi usati da aziende molto più grandi). Resta un solo costo, il dominio
+> Con la soluzione che vi propongo il sito diventa un insieme di pagine leggere ospitate gratis (GitHub Pages,
+> lo stesso servizio usato da aziende molto più grandi), e gli articoli si continuano a scrivere su WordPress come oggi. Resta un solo costo, il dominio
 > corriconlelinci.com, circa 12 € l'anno: niente pubblicità, niente aggiornamenti o plugin da seguire, e
 > niente da rifare in fretta il giorno prima della gara.
 
@@ -163,7 +164,9 @@ le-linci/
 ├── src/           input.css (stili) · partials/header.html, footer.html (parti comuni)
 ├── tools/         sync_partials.py (copia header/footer in tutte le pagine)
 │                  build_archivio.py (rigenera l'archivio dall'API di WordPress.com)
-├── netlify.toml   redirect dai vecchi indirizzi + cache
+├── 404.html       redirect dai vecchi indirizzi (qualsiasi hosting)
+├── notizia.html   legge articoli e pagine storiche dal blog WordPress.com
+├── netlify.toml   configurazione facoltativa se si usa Netlify
 └── package.json   npm run build → ricompila il CSS
 ```
 
@@ -176,7 +179,7 @@ le-linci/
 | CTA | **Iscriviti ora** (56 px, larghezza piena da mobile) verso i 4 moduli ufficiali; *Percorso e GPX* e *Regolamento* come secondari |
 | Quick card | **Percorsi** (19 km a coppie, 10 km ludico-motoria, Kids 1,2 km), **Dislivello** (900 m D+, tempo limite 4 h), **Ristori** (2 sulla 19 km, 1 sulla 10 km, pasta party, ecotazza obbligatoria) |
 | Chi siamo & Allenamenti | Testi originali del branco, foto vere, **Linciodromo** ogni lunedì dalle 18 al Parco Bucci |
-| Contatti & modulo | Email associazione ed eventi, telefono sede, social, moduli Netlify Forms con honeypot antispam e consenso privacy |
+| Contatti & modulo | Email associazione ed eventi, telefono sede, social, newsletter WordPress.com (stessa lista di oggi), modulo FormSubmit con honeypot antispam e consenso privacy |
 | Footer | Logo con *pelofulgidosempre*, Pol. Dil. Santa Lucia, Via S. Mamante 71, Faenza, link, social |
 | Identità | Giallo fluo e blu delle maglie e delle locandine, motti originali ("Ciò che trail!", "grr grr grr", "pelo fulgido sempre") |
 | Funzioni utili da telefono | Countdown, *Aggiungi al calendario* (.ics), *Copia IBAN*, *Salva i 3 numeri dell'organizzazione* (.vcf, sono materiale obbligatorio), calendario che segna da solo gli eventi passati, ricerca nell'archivio |
@@ -191,8 +194,7 @@ risorsa mancante, nessuno scroll orizzontale. Testati anche countdown, calendari
 ### Come provarlo e pubblicarlo
 
 - **Anteprima locale:** doppio clic su `index.html`. In locale i moduli mostrano un messaggio di anteprima.
-- **Pubblicazione gratuita su Netlify:** trascinare la cartella `le-linci/` su https://app.netlify.com/drop.
-  Si ottiene un indirizzo `*.netlify.app` da mandare a Davide; moduli e redirect funzionano subito.
+- **Pubblicazione gratuita:** GitHub Pages con il workflow `.github/workflows/le-linci-pages.yml` (repo pubblico, nessuna carta richiesta). Passi in [`GESTIONE.md`](./GESTIONE.md).
 - **Modifiche:** si modifica l'HTML; se si cambiano header o footer, `python3 tools/sync_partials.py`; se si usano
   classi Tailwind nuove, `npm install` una volta e poi `npm run build`.
 
@@ -201,7 +203,8 @@ risorsa mancante, nessuno scroll orizzontale. Testati anche countdown, calendari
 - [ ] Traccia GPX ufficiale della 19 km in `assets/trail-sul-trebbio-2026-19km.gpx`, poi togliere `data-da-fornire` dal pulsante.
 - [ ] Codice fiscale / P.IVA della Pol. Dil. Santa Lucia nel footer (`src/partials/footer.html`).
 - [ ] Far validare dal direttivo il testo privacy in `contatti.html`.
-- [ ] Netlify → Forms → Notifications: inoltro a `lelinci.brancopodistico@gmail.com`.
+- [ ] Al primo messaggio dal modulo contatti, confermare l'email di attivazione di FormSubmit.
+- [ ] Provare l'iscrizione alla newsletter con un indirizzo vero.
 - [ ] Facoltativo: elenco nominativo delle linci per anno in `branco.html` (oggi solo i numeri, per scelta di privacy).
 
 ---
@@ -215,7 +218,7 @@ risorsa mancante, nessuno scroll orizzontale. Testati anche countdown, calendari
 > grazie per la risposta, e in bocca al lupo per il Trebbio! Visto che siete sotto gara non ti rubo tempo:
 > ho preparato il mockup della nuova home, lo trovi qui e si guarda in un minuto dal telefono:
 >
-> 👉 **[LINK AL MOCKUP – es. https://lelinci-mockup.netlify.app]**
+> 👉 **[LINK AL SITO DI PROVA – es. https://nicolassantini.github.io/Websites/]**
 >
 > È fatto tutto con i vostri contenuti: il regolamento 2026 del Trebbio con i vostri moduli Google,
 > le locandine, le foto del Linciodromo, il calendario dell'anno e i 310 articoli del blog in archivio.

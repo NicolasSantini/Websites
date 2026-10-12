@@ -10,6 +10,8 @@ ROOT = pathlib.Path(__file__).resolve().parent.parent
 PARTIALS = {name: (ROOT / 'src' / 'partials' / f'{name}.html').read_text().rstrip() for name in ('header', 'footer')}
 
 for page in sorted(ROOT.glob('*.html')):
+    if page.name == '404.html':  # pagina autonoma, senza header/footer
+        continue
     html = page.read_text()
     m = re.search(r'<body[^>]*data-pagina="([^"]*)"', html)
     attiva = m.group(1) if m else ''

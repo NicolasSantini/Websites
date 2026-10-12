@@ -12,9 +12,8 @@
   <meta property="og:type" content="website">
   <link rel="icon" type="image/png" href="assets/img/favicon.png">
   <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=Caveat:wght@600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="preload" href="assets/fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="assets/fonts/barlow-condensed-800-latin.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="assets/styles.css">
   <script src="assets/site.js" defer></script>
 </head>
@@ -215,6 +214,24 @@
     </div>
   </section>
 
+  <!-- ============ ULTIME DAL BRANCO (dal blog WordPress) ============ -->
+  <section class="contenitore pt-12 md:pt-16" aria-labelledby="titolo-ultime">
+    <div class="flex flex-wrap items-end justify-between gap-3">
+      <div>
+        <p class="occhiello">Dal blog</p>
+        <h2 id="titolo-ultime" class="titolo mt-1">Ultime dal branco</h2>
+      </div>
+      <a href="archivio.html" class="text-sm font-semibold text-blu-700 underline underline-offset-4">Tutti gli articoli →</a>
+    </div>
+    <ul data-wp-ultime="3" class="mt-6 grid gap-4 md:grid-cols-3">
+<!-- ULTIME:START -->
+<li><a href="notizia.html?articolo=iscrizioni-al-trail-sul-trebbio-on" class="card flex h-full flex-col overflow-hidden p-0 hover:ring-blu-700"><img src="https://corriconlelinci.wordpress.com/wp-content/uploads/2026/10/locandina-09-trail-sul-trebbio-2026.jpeg?w=600&amp;h=340&amp;crop=1" alt="" loading="lazy" class="aspect-[16/9] w-full object-cover"><div class="p-5"><time datetime="2026-10-01T08:23:04" class="text-sm text-blu-800/70">1 ott 2026</time><p class="mt-1 font-display text-2xl font-bold leading-tight">Iscrizioni al Trail sul Trebbio ON</p><p class="mt-2 line-clamp-3 text-sm text-blu-800/80">Il 15 novembre a Modigliana il Trail sul Trebbio vi aspetta, se ci vuoi essere, se ci volete essere, vi diamo tutte le istruzioni a questo link cliccami per iscriverti Seguici anche sui social per tutti i fulgidi aggiornamenti. Dai che ci divertiamo !</p></div></a></li>
+<li><a href="notizia.html?articolo=due-mesetti-e-sara-trail-sul-trebbio-2026" class="card flex h-full flex-col overflow-hidden p-0 hover:ring-blu-700"><img src="https://corriconlelinci.wordpress.com/wp-content/uploads/2026/09/cartolina-trail-sul-trebbio-2026.jpeg?w=600&amp;h=340&amp;crop=1" alt="" loading="lazy" class="aspect-[16/9] w-full object-cover"><div class="p-5"><time datetime="2026-09-15T07:25:36" class="text-sm text-blu-800/70">15 set 2026</time><p class="mt-1 font-display text-2xl font-bold leading-tight">Due mesetti e sarà Trail sul Trebbio 2026</p><p class="mt-2 line-clamp-3 text-sm text-blu-800/80">Data 15 novembre da segnare in agenda, anzi se fai la competitiva di 19 km , sarà da segnare in due agende, si vola in coppia! Dal primo ottobre ci si può iscrivere, intanto nella pagina dedicata trovi il regolamento GRR GRR GRR</p></div></a></li>
+<li><a href="notizia.html?articolo=un-mese-allapertura-iscrizioni-del-trail-sul-trebbio" class="card flex h-full flex-col overflow-hidden p-0 hover:ring-blu-700"><div class="grid aspect-[16/9] place-items-center bg-giallo-400 font-mano text-4xl text-blu-950">grr grr grr</div><div class="p-5"><time datetime="2026-09-01T11:20:30" class="text-sm text-blu-800/70">1 set 2026</time><p class="mt-1 font-display text-2xl font-bold leading-tight">Un mese all’apertura iscrizioni del Trail sul Trebbio</p><p class="mt-2 line-clamp-3 text-sm text-blu-800/80">Manca un mese e poi dal primo ottobre ci si potrà iscrivere all’undicesima edizione del Trail sul Trebbio. Tantissimissime novità quest’anno, a partire dalla distanza di 19 km che sarà competitiva e a coppie : si parte insieme e si arriva insieme. E poi confermata la 10 km ludico motoria e la Kids trail Ma […]</p></div></a></li>
+<!-- ULTIME:END -->
+    </ul>
+  </section>
+
   <!-- ============ IL BRANCO + LINCIODROMO ============ -->
   <section class="contenitore grid gap-8 py-12 md:grid-cols-2 md:items-center md:py-16" aria-labelledby="titolo-branco">
     <div>
@@ -244,7 +261,7 @@
     <div class="contenitore grid gap-8 md:grid-cols-[1fr_1.2fr]">
       <div>
         <h2 id="titolo-contatti" class="titolo">Resta nel branco</h2>
-        <p class="mt-3 text-lg">Le novità di tutti i giorni le trovi sui social. Lasciaci la tua email e ti avvisiamo quando aprono le iscrizioni alle nostre gare.</p>
+        <p class="mt-3 text-lg">Le novità di tutti i giorni le trovi sui social. Iscriviti alla newsletter e ricevi ogni nuovo articolo del blog, dalle iscrizioni alle classifiche.</p>
         <ul class="mt-6 space-y-3">
           <li><a href="https://www.facebook.com/Le-Linci-Branco-Podistico-1658052867794894/" target="_blank" rel="noopener" class="flex min-h-[56px] items-center gap-4 rounded-2xl bg-white px-4 shadow-sm ring-1 ring-blu-100 hover:ring-blu-700">
             <svg class="h-6 w-6 text-blu-800" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M14 8h3V4h-3a4 4 0 00-4 4v2H8v4h2v8h4v-8h3l1-4h-4V8z"/></svg>
@@ -254,22 +271,33 @@
             <span><strong class="block">Instagram</strong><span class="text-sm text-blu-800/80">@lelinci.brancopodistico</span></span></a></li>
         </ul>
       </div>
-      <form name="avvisi" method="POST" data-netlify="true" netlify-honeypot="sito-web" class="card">
-        <input type="hidden" name="form-name" value="avvisi">
-        <p class="hidden"><label>Non compilare: <input name="sito-web" tabindex="-1" autocomplete="off"></label></p>
-        <p class="font-display text-2xl font-bold uppercase text-blu-900">Avvisami quando aprono le iscrizioni</p>
-        <div class="mt-4 grid gap-4 sm:grid-cols-2">
-          <label class="block"><span class="text-sm font-medium">Nome</span><input name="nome" type="text" autocomplete="given-name" required class="campo"></label>
-          <label class="block"><span class="text-sm font-medium">Email</span><input name="email" type="email" autocomplete="email" inputmode="email" required class="campo"></label>
-        </div>
-        <label class="mt-4 flex items-start gap-3 text-sm text-blu-800/80">
-          <input type="checkbox" name="privacy" required class="mt-1 h-5 w-5 shrink-0 accent-blu-700">
-          <span>Acconsento a ricevere comunicazioni dalle Linci (<a href="contatti.html#privacy" class="underline">informativa privacy</a>).</span>
-        </label>
-        <button type="submit" class="btn-scuro mt-5 w-full">Iscrivimi agli avvisi</button>
-        <p data-esito class="hidden" role="status"></p>
-      </form>
+      <div class="card">
+        <p class="font-display text-3xl font-extrabold uppercase text-blu-900">Newsletter delle Linci</p>
+        <p class="mt-2 text-blu-800/90">Ricevi per email ogni nuovo articolo: gare, iscrizioni, classifiche. Siamo già in più di 400.</p>
+        <!-- Iscrizione alla newsletter di WordPress.com del blog (stessa lista degli iscritti di oggi) -->
+        <form action="https://subscribe.wordpress.com" method="post" target="_blank" class="mt-4">
+          <input type="hidden" name="action" value="subscribe">
+          <input type="hidden" name="blog_id" value="64730052">
+          <input type="hidden" name="source" value="https://corriconlelinci.com/">
+          <input type="hidden" name="sub-type" value="widget">
+          <label class="block"><span class="text-sm font-medium">La tua email</span>
+            <input name="email" type="email" autocomplete="email" inputmode="email" required class="campo"></label>
+          <button type="submit" class="btn-scuro mt-4 w-full">Iscrivimi alla newsletter</button>
+        </form>
+        <p class="mt-3 text-xs text-blu-800/70">Riceverai una email di conferma da WordPress.com. Se non arriva, iscriviti
+          <a href="https://corriconlelinci.wordpress.com/#subscribe-blog" target="_blank" rel="noopener" class="underline">dal blog</a>.
+          Puoi cancellarti in qualsiasi momento dal link in fondo alle email.</p>
+      </div>
     </div>
+  </section>
+  <!-- ============ CI SOSTENGONO (loghi dalla pagina "Patrocinatori" di WordPress) ============ -->
+  <section class="contenitore py-12" aria-labelledby="titolo-sponsor">
+    <p class="occhiello">Tutti collaboratori eccezionali</p>
+    <h2 id="titolo-sponsor" class="titolo mt-1">Ci sostengono</h2>
+    <div data-wp-galleria="patrocinatori-3" data-stile="loghi" class="mt-6 grid grid-cols-2 gap-3 sm:grid-cols-4 lg:grid-cols-6">
+      <p class="col-span-full text-sm text-blu-800/70">Caricamento dei loghi…</p>
+    </div>
+    <p class="mt-4 text-sm"><a href="notizia.html?pagina=promozioni" class="font-semibold text-blu-700 underline underline-offset-4">Promozioni dedicate alle linci →</a></p>
   </section>
 </main>
 

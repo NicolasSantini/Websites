@@ -8,9 +8,8 @@
   <meta name="theme-color" content="#14224a">
   <link rel="icon" type="image/png" href="assets/img/favicon.png">
   <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=Caveat:wght@600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="preload" href="assets/fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="assets/fonts/barlow-condensed-800-latin.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="assets/styles.css">
   <script src="assets/site.js" defer></script>
 </head>
@@ -86,7 +85,7 @@
         <li class="flex h-full flex-1 flex-col items-center gap-1"><div class="flex w-full flex-1 flex-col items-center justify-end gap-1"><span class="text-xs font-semibold">29</span><span class="w-full rounded-t-md bg-blu-700" style="height:85%"></span></div><span class="text-[10px] text-blu-800/80 sm:text-xs">'25</span></li>
         <li class="flex h-full flex-1 flex-col items-center gap-1"><div class="flex w-full flex-1 flex-col items-center justify-end gap-1"><span class="text-xs font-semibold">25</span><span class="w-full rounded-t-md bg-giallo-400" style="height:73%"></span></div><span class="text-[10px] font-semibold sm:text-xs">'26</span></li>
       </ol>
-      <!-- L'elenco nominativo delle linci per anno resta sul vecchio sito (pagina "il branco"); si può riportare qui se il direttivo lo desidera. -->
+      <a href="notizia.html?pagina=il-branco&amp;integrale=1" class="mt-5 inline-flex min-h-[44px] items-center font-semibold text-blu-700 underline underline-offset-4">Guarda chi è, chi era e chi sarà lince: l'elenco completo →</a>
     </div>
   </section>
 
@@ -118,17 +117,31 @@
       <p class="mt-3 text-blu-800/90">Il gioco più bello del comprensorio: per un anno si segnano gare e chilometri graffiati. Una volta tesserati si finisce in un girone con altre linci, e da lì si comincia.</p>
       <p class="mt-3 rounded-xl bg-giallo-100 p-3 text-sm">L'anno lincioso va dal <strong>1° aprile al 31 marzo</strong>. Gironi dal 2024.</p>
       <p class="mt-3 font-mano text-2xl text-blu-700">pelo fulgido in partenza, arruffato all'arrivo!</p>
+      <a href="notizia.html?pagina=graduatoria" class="btn-scuro mt-4 w-full">Classifiche e gironi →</a>
     </article>
     <article id="abbigliamento" class="card">
       <h2 class="font-display text-3xl font-extrabold uppercase leading-none">Abbigliamento</h2>
       <p class="mt-3 text-blu-800/90">A volte si esaurisce in poco tempo, a volte tutti lo vogliono, a volte lancia le mode: è il materiale lincesco, giallo e blu. Sfoglia il catalogo 2013–2024 e ordina con il modulo.</p>
-      <a href="https://forms.gle/DdhRJcy77VsQMhgG9" target="_blank" rel="noopener" class="btn-scuro mt-5 w-full">Catalogo e ordini ↗</a>
+      <div data-youtube="J_P61Fa3oWk" data-titolo="Il video di presentazione del catalogo" class="mt-4"></div>
+      <a href="https://forms.gle/DdhRJcy77VsQMhgG9" target="_blank" rel="noopener" class="btn-scuro mt-4 w-full">Catalogo e ordini ↗</a>
     </article>
     <article id="entra" class="card border-t-4 border-giallo-400">
       <h2 class="font-display text-3xl font-extrabold uppercase leading-none">Entra nel branco</h2>
       <p class="mt-3 text-blu-800/90">Il modo più semplice? Vieni un lunedì al Linciodromo. Per tesserarti con la Pol. Dil. Santa Lucia e partecipare al campionato lincesco, scrivici.</p>
       <a href="contatti.html" class="btn-primario mt-5 w-full">Scrivici</a>
     </article>
+  </section>
+  <!-- ============ SI PARLA DI NOI ============ -->
+  <section class="contenitore pb-12" aria-labelledby="titolo-libro">
+    <div class="grid items-center gap-6 rounded-3xl bg-giallo-400 p-6 md:grid-cols-[220px_1fr] md:p-8">
+      <img src="https://corriconlelinci.wordpress.com/wp-content/uploads/2018/01/img-20180114-wa0012-e1518257427718.jpg?w=440" alt="Il libro che parla delle Linci" width="220" loading="lazy" class="w-full max-w-[220px] rounded-2xl shadow-lg">
+      <div>
+        <h2 id="titolo-libro" class="font-display text-4xl font-extrabold uppercase leading-none text-blu-950">Si parla di noi!</h2>
+        <p class="mt-3 text-blu-950">C'è anche un libro che racconta le Linci. Per ordinarlo scrivete direttamente all'autore:
+          <a href="mailto:tampierilince@gmail.com" class="font-semibold underline">tampierilince@gmail.com</a>.</p>
+        <a href="notizia.html?pagina=rassegna-stampa" class="btn-scuro mt-4">Rassegna stampa →</a>
+      </div>
+    </div>
   </section>
 </main>
 
