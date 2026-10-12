@@ -76,5 +76,9 @@ python3 tools/sync_partials.py    # copia header e footer (src/partials/) in tut
 python3 tools/build_archivio.py   # aggiorna la copia statica dell'archivio e degli ultimi articoli (facoltativo)
 ```
 
+Lo stile grafico (colori, font, componenti, cosa evitare) è descritto in [`DESIGN.md`](./DESIGN.md): va letto prima di aggiungere pagine.
+Nel repository ci sono anche le skill di design per Claude Code (`.claude/skills/`): `/impeccable audit` controlla accessibilità
+e coerenza, `/impeccable polish` fa la rifinitura finale.
+
 Il JavaScript è tutto in `assets/site.js`, gli stili sorgente in `src/input.css`. I font sono ospitati in `assets/fonts/`:
 nessuna richiesta a Google, quindi niente banner cookie.

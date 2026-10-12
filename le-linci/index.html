@@ -12,7 +12,7 @@
   <meta property="og:type" content="website">
   <link rel="icon" type="image/png" href="assets/img/favicon.png">
   <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
-  <link rel="preload" href="assets/fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="assets/fonts/barlow-400-latin.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="assets/fonts/barlow-condensed-800-latin.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="assets/styles.css">
   <script src="assets/site.js" defer></script>
@@ -59,14 +59,13 @@
 
     <div class="contenitore grid gap-10 pb-12 pt-8 md:grid-cols-[1.3fr_1fr] md:items-center md:pb-20 md:pt-16">
       <div>
-        <div class="flex flex-wrap gap-2">
+        <h1 id="titolo-gara" class="font-display text-6xl font-extrabold uppercase leading-[0.9] tracking-tight md:text-8xl">
+          Trail sul<br><span class="text-giallo-400">Trebbio</span>
+        </h1>
+        <div class="mt-4 flex flex-wrap gap-2">
           <span class="chip bg-giallo-400 py-1 font-bold uppercase tracking-wider text-blu-950">Prossimo evento · 11ª edizione</span>
           <span class="chip bg-azzurro-400 py-1 font-bold uppercase tracking-wider text-blu-950">Novità: si corre a coppie</span>
         </div>
-
-        <h1 id="titolo-gara" class="mt-4 font-display text-6xl font-extrabold uppercase leading-[0.9] tracking-tight md:text-8xl">
-          Trail sul<br><span class="text-giallo-400">Trebbio</span>
-        </h1>
 
         <dl class="mt-6 grid grid-cols-2 gap-3 sm:grid-cols-3">
           <div class="col-span-2 rounded-2xl bg-blu-950/50 p-4 ring-1 ring-white/15 backdrop-blur-sm sm:col-span-1">
@@ -109,7 +108,7 @@
 
       <aside class="rounded-3xl bg-blu-950/70 p-6 ring-1 ring-white/15 backdrop-blur" aria-label="Conto alla rovescia">
         <p class="text-xs font-semibold uppercase tracking-wider text-white/70">Al via mancano</p>
-        <div class="mt-3 grid grid-cols-4 gap-2 text-center" data-countdown="2026-11-15T09:30:00+01:00">
+        <div class="mt-3 grid grid-cols-4 gap-2 text-center" data-countdown="2026-11-15T09:30:00+01:00" style="font-variant-numeric: tabular-nums">
           <div><span data-cd="d" class="block font-display text-5xl font-extrabold text-giallo-400">--</span><span class="text-xs uppercase text-white/70">giorni</span></div>
           <div><span data-cd="h" class="block font-display text-5xl font-extrabold">--</span><span class="text-xs uppercase text-white/70">ore</span></div>
           <div><span data-cd="m" class="block font-display text-5xl font-extrabold">--</span><span class="text-xs uppercase text-white/70">min</span></div>
@@ -196,10 +195,7 @@
   <section class="bg-white py-12 md:py-16" aria-labelledby="titolo-calendario">
     <div class="contenitore">
       <div class="flex flex-wrap items-end justify-between gap-3">
-        <div>
-          <p class="occhiello">Calendario 2026</p>
-          <h2 id="titolo-calendario" class="titolo mt-1">Un anno da linci</h2>
-        </div>
+        <h2 id="titolo-calendario" class="titolo">Calendario 2026</h2>
         <a href="eventi.html" class="text-sm font-semibold text-blu-700 underline underline-offset-4">Tutti gli eventi →</a>
       </div>
       <ol class="no-scrollbar -mx-4 mt-6 flex snap-x gap-3 overflow-x-auto px-4 pb-2" data-calendario>
@@ -217,10 +213,7 @@
   <!-- ============ ULTIME DAL BRANCO (dal blog WordPress) ============ -->
   <section class="contenitore pt-12 md:pt-16" aria-labelledby="titolo-ultime">
     <div class="flex flex-wrap items-end justify-between gap-3">
-      <div>
-        <p class="occhiello">Dal blog</p>
-        <h2 id="titolo-ultime" class="titolo mt-1">Ultime dal branco</h2>
-      </div>
+      <h2 id="titolo-ultime" class="titolo">Ultime dal branco</h2>
       <a href="archivio.html" class="text-sm font-semibold text-blu-700 underline underline-offset-4">Tutti gli articoli →</a>
     </div>
     <ul data-wp-ultime="3" class="mt-6 grid gap-4 md:grid-cols-3">
@@ -235,8 +228,7 @@
   <!-- ============ IL BRANCO + LINCIODROMO ============ -->
   <section class="contenitore grid gap-8 py-12 md:grid-cols-2 md:items-center md:py-16" aria-labelledby="titolo-branco">
     <div>
-      <p class="occhiello">Chi siamo</p>
-      <h2 id="titolo-branco" class="titolo mt-1">Non siamo gatti sphinx,<br>siamo linci!</h2>
+      <h2 id="titolo-branco" class="titolo">Non siamo gatti sphinx,<br>siamo linci!</h2>
       <p class="mt-5 text-lg leading-relaxed">Il branco nasce a Faenza nel 2013 dentro la Pol. Dil. Santa Lucia e, come una palla di neve che rotola,
         non si è più fermato: oggi siamo più di 200 linci. Corriamo su strada e sui sentieri, organizziamo gare e
         mettiamo al centro chi partecipa. Se tutti tornano a casa col sorriso, la missione è compiuta.</p>
@@ -292,8 +284,8 @@
   </section>
   <!-- ============ CI SOSTENGONO (loghi dalla pagina "Patrocinatori" di WordPress) ============ -->
   <section class="contenitore py-12" aria-labelledby="titolo-sponsor">
-    <p class="occhiello">Tutti collaboratori eccezionali</p>
-    <h2 id="titolo-sponsor" class="titolo mt-1">Ci sostengono</h2>
+    <h2 id="titolo-sponsor" class="titolo">Ci sostengono</h2>
+    <p class="mt-2 text-blu-800/80">Tutti collaboratori eccezionali.</p>
     <div data-wp-galleria="patrocinatori-3" data-stile="loghi" class="mt-6 grid grid-cols-2 gap-3 sm:grid-cols-4 lg:grid-cols-6">
       <p class="col-span-full text-sm text-blu-800/70">Caricamento dei loghi…</p>
     </div>

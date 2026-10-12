@@ -11,7 +11,7 @@
   <meta property="og:image" content="assets/img/locandina-trebbio-2026.jpg">
   <link rel="icon" type="image/png" href="assets/img/favicon.png">
   <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
-  <link rel="preload" href="assets/fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="assets/fonts/barlow-400-latin.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="assets/fonts/barlow-condensed-800-latin.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="assets/styles.css">
   <script src="assets/site.js" defer></script>
@@ -73,8 +73,8 @@
          class="absolute inset-0 -z-10 h-full w-full object-cover object-[60%_40%] opacity-45">
     <div class="absolute inset-0 -z-10 bg-gradient-to-t from-blu-900 via-blu-900/80 to-blu-900/40"></div>
     <div class="contenitore pb-10 pt-10 md:pb-16 md:pt-20">
-      <p class="font-mano text-3xl text-giallo-400">11ª edizione · ciò che trail!</p>
-      <h1 id="titolo-pagina" class="mt-1 font-display text-6xl font-extrabold uppercase leading-[0.9] md:text-8xl">Trail sul Trebbio</h1>
+      <h1 id="titolo-pagina" class="font-display text-6xl font-extrabold uppercase leading-[0.9] md:text-8xl">Trail sul Trebbio</h1>
+      <p class="mt-2 font-mano text-3xl text-giallo-400">11ª edizione · ciò che trail!</p>
       <p class="mt-4 max-w-2xl text-lg text-white/85">Domenica <strong class="text-white">15 novembre 2026</strong>, partenza alle <strong class="text-white">9:30</strong> dal Camping La Luna sul Trebbio di Modigliana (FC).
         Quest'anno la 19 km è <strong class="text-giallo-400">competitiva e a coppie</strong>: si parte insieme e si arriva insieme.</p>
       <div class="mt-6 flex flex-col gap-3 sm:flex-row">
@@ -99,13 +99,12 @@
 
   <!-- ============ ISCRIZIONI ============ -->
   <section id="iscrizioni" class="contenitore py-12" aria-labelledby="titolo-iscrizioni">
-    <p class="occhiello">Iscrizioni aperte dal 1° ottobre</p>
-    <h2 id="titolo-iscrizioni" class="titolo mt-1">Scegli la tua gara</h2>
-    <p class="mt-3 max-w-2xl text-blu-800/90">Compila il modulo online, poi paga con bonifico o Satispay (<a href="#quote" class="font-medium text-blu-700 underline">vedi quote</a>).
+    <h2 id="titolo-iscrizioni" class="titolo">Scegli la tua gara</h2>
+    <p class="mt-3 max-w-2xl text-blu-800/90"><strong class="text-blu-900">Iscrizioni aperte dal 1° ottobre.</strong> Compila il modulo online, poi paga con bonifico o Satispay (<a href="#quote" class="font-medium text-blu-700 underline">vedi quote</a>).
       Le iscrizioni chiudono <strong>giovedì 12 novembre</strong> o quando si arriva a 75 coppie competitive e 150 iscritti alla ludico-motoria.</p>
 
     <div class="mt-6 grid gap-4 md:grid-cols-2">
-      <article class="card flex flex-col border-t-4 border-giallo-400">
+      <article class="card flex flex-col ring-2 ring-giallo-400">
         <div class="flex items-start justify-between gap-3">
           <h3 class="font-display text-3xl font-extrabold uppercase leading-none">19 km a coppie</h3>
           <span class="chip bg-giallo-400 text-blu-950">Competitiva</span>
@@ -115,7 +114,7 @@
         <a href="https://forms.gle/qrPHYp2k2MFqNsMLA" target="_blank" rel="noopener" class="btn-primario mt-5 min-h-[52px] w-full">Modulo coppia ↗</a>
       </article>
 
-      <article class="card flex flex-col border-t-4 border-azzurro-400">
+      <article class="card flex flex-col ring-2 ring-azzurro-400">
         <div class="flex items-start justify-between gap-3">
           <h3 class="font-display text-3xl font-extrabold uppercase leading-none">Libertini</h3>
           <span class="chip bg-azzurro-100 text-blu-900">19 km da solo</span>
@@ -124,7 +123,7 @@
         <a href="https://forms.gle/c3sdkDEWn2bbPKYe8" target="_blank" rel="noopener" class="btn-scuro mt-5 min-h-[52px] w-full">Modulo libertini ↗</a>
       </article>
 
-      <article class="card flex flex-col border-t-4 border-blu-700">
+      <article class="card flex flex-col ring-2 ring-blu-700">
         <div class="flex items-start justify-between gap-3">
           <h3 class="font-display text-3xl font-extrabold uppercase leading-none">10 km</h3>
           <span class="chip bg-blu-100 text-blu-900">Ludico-motoria</span>
@@ -134,7 +133,7 @@
         <a href="https://forms.gle/3XxWaUD3sGwV285E8" target="_blank" rel="noopener" class="btn-scuro mt-5 min-h-[52px] w-full">Modulo 10 km ↗</a>
       </article>
 
-      <article class="card flex flex-col border-t-4 border-giallo-300">
+      <article class="card flex flex-col ring-2 ring-giallo-300">
         <div class="flex items-start justify-between gap-3">
           <h3 class="font-display text-3xl font-extrabold uppercase leading-none">Kids trail</h3>
           <span class="chip bg-giallo-100 text-blu-900">6–12 anni</span>
@@ -163,7 +162,7 @@
       <div>
         <h2 id="titolo-quote" class="titolo">Quote</h2>
         <div class="mt-6 overflow-hidden rounded-3xl ring-1 ring-blu-100">
-          <table class="w-full text-left text-sm sm:text-base">
+          <table class="w-full text-left text-sm tabular-nums sm:text-base">
             <caption class="sr-only">Quote di iscrizione al Trail sul Trebbio 2026</caption>
             <thead class="bg-blu-900 text-white">
               <tr><th scope="col" class="px-4 py-3 font-semibold">Gara</th><th scope="col" class="px-4 py-3 font-semibold">Periodo</th><th scope="col" class="px-4 py-3 text-right font-semibold">Quota</th></tr>
