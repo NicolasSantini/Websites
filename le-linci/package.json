@@ -1,0 +1,13 @@
+{
+  "name": "le-linci-sito",
+  "private": true,
+  "description": "Sito statico de Le Linci - Branco Podistico",
+  "scripts": {
+    "build": "tailwindcss -i src/input.css -o assets/styles.css --minify",
+    "dev": "tailwindcss -i src/input.css -o assets/styles.css --watch",
+    "archivio": "python3 tools/build_archivio.py"
+  },
+  "devDependencies": {
+    "tailwindcss": "3.4.17"
+  }
+}

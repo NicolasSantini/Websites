@@ -5,12 +5,11 @@
 **Referente:** Davide
 **Proposta di:** Nicolas Santini
 **Data:** 12 ottobre 2026
-**Prototipo:** [`index.html`](./index.html) (file singolo, apribile direttamente nel browser) · anteprime: [mobile](./screenshots/mobile.png), [desktop](./screenshots/desktop-full.png)
+**Nuovo sito:** cartella [`le-linci/`](./): 6 pagine statiche pronte da pubblicare, a partire da [`index.html`](./index.html) · anteprime: [mobile](./screenshots/home-mobile.png), [desktop](./screenshots/home-desktop.png)
 
-> **Nota sui dati.** I contenuti del prototipo vengono dalle pagine indicizzate di corriconlelinci.com
-> (Home, *Il branco*, *Contatti*, *Calendario eventi*, *Trail sul Trebbio*) e dai portali gara.
-> Le fonti sono elencate in fondo. I dati segnati con `*` nel prototipo (quote, dislivello, tempo massimo)
-> sono quelli dell'edizione 2025 e vanno confermati sul regolamento 2026 (aggiornato al 27/08/26).
+> **Nota sui dati.** Tutti i contenuti vengono dal sito attuale (29 pagine e 310 articoli letti tramite l'API
+> pubblica di WordPress.com) e dal **regolamento ufficiale 2026** (rev. 27/08/26). Orari, quote, dislivello,
+> ristori e moduli d'iscrizione del Trail sul Trebbio sono quelli ufficiali. Resta da fornire solo la traccia GPX.
 
 ---
 
@@ -18,63 +17,62 @@
 
 ### Il problema in una riga
 
-Oggi la home elenca più di 170 link: articoli del blog, categorie, tag, pagine evento (Sveglia Presto
-Running, Meeting Run, Trail sul Trebbio, Notturne Trail, Birrabranco…), elenchi soci per anno e rassegna stampa,
-tutti allo stesso livello. Chi deve iscriversi al Trebbio dal telefono deve cercare tra decine di voci.
+Oggi la home contiene **172 link** e il menu principale ha **30 voci**: pagine evento, sottopagine per anno
+(Millennium Triathlon 2014–2019), elenchi soci, meme, classifiche, rassegna stampa, tutti allo stesso livello,
+più 310 articoli del blog. Chi deve iscriversi al Trebbio dal telefono deve cercare tra decine di voci, e i moduli
+d'iscrizione sono sepolti in fondo a una pagina di testo.
 
-### Sitemap proposta (5 pagine)
+### Sitemap del nuovo sito (home + 5 sezioni)
 
 ```
 corriconlelinci.com
 │
-├── 1. HOME  /                  ← "la prossima gara" in primo piano
-│      ├─ Hero prossimo evento (data, ora, luogo, Iscriviti, GPX, Regolamento)
+├── HOME  index.html                 ← la prossima gara in primo piano
+│      ├─ Hero Trail sul Trebbio (data, ora, luogo, Iscriviti, percorso, regolamento, countdown)
 │      ├─ La gara in breve (percorsi, dislivello, ristori)
-│      ├─ Il Branco + Linciodromo (anteprima)
-│      └─ Contatti rapidi + modulo
+│      ├─ Calendario 2026 (scorre da solo fino al prossimo evento)
+│      ├─ Il Branco + Linciodromo
+│      └─ Social + modulo "avvisami quando aprono le iscrizioni"
 │
-├── 2. GARE  /gare/
-│      ├─ /gare/trail-sul-trebbio/      (pagina evento completa: programma, percorsi,
-│      │                                  mappa ritrovo, GPX, regolamento, FAQ, classifiche)
-│      ├─ /gare/sveglia-presto-running/
-│      └─ /gare/meeting-run/
-│         (stesso modello per ogni gara: si duplica e si cambiano i dati)
+├── 1. TRAIL SUL TREBBIO  trail-sul-trebbio.html
+│      Iscrizioni (4 moduli: coppia, libertini, 10 km, kids + moduli cartacei) · Quote e pagamento
+│      (IBAN copiabile, Satispay) · Programma · Percorsi + GPX · Materiale obbligatorio (numeri da salvare
+│      in rubrica con un tocco) · Info utili (dove, dormire, cani, requisiti) · Domande frequenti
 │
-├── 3. IL BRANCO  /branco/
-│      ├─ Chi siamo (dal 2013, Pol. Dil. Santa Lucia)
-│      ├─ Allenamenti: Linciodromo (lunedì 18:00, Parco Bucci) e Notturne Trail
-│      └─ Come entrare nel branco (tesseramento, certificato, quota)
+├── 2. EVENTI  eventi.html
+│      Calendario 2026 con stato (fatto / prossimo / in arrivo) · Le gare con locandina e dettagli
+│      (Trebbio, Sotto la Luna e la Torre, Sveglia Presto Running, Meeting Run) · Vita di branco · Storico 40+ eventi
 │
-├── 4. ARCHIVIO  /archivio/      ← qui finiscono i 170 link di oggi
-│      ├─ Calendario storico eventi (ex "effemeride")
-│      ├─ Risultati e classifiche per anno
-│      ├─ Rassegna stampa
-│      └─ Articoli del blog (per anno, con ricerca)
+├── 3. IL BRANCO  branco.html
+│      Chi siamo · Numeri (214 linci dal 2013, grafico per anno) · Linciodromo · Campionato lincesco ·
+│      Abbigliamento · Come entrare
 │
-└── 5. CONTATTI  /contatti/
-       ├─ Email associazione + email Trail
-       ├─ Social (Instagram, Facebook, X)
-       ├─ Modulo info / avvisi iscrizioni
-       └─ Sede, dati legali, privacy
+├── 4. ARCHIVIO  archivio.html       ← qui finiscono i 310 articoli e le pagine storiche
+│      Ricerca per titolo · Articoli per anno · 19 pagine storiche (classifiche, rassegna stampa, meme…)
+│
+└── 5. CONTATTI  contatti.html
+       Sede, telefono, email · Email dei singoli eventi · Social · Modulo · Privacy
 ```
 
-Il menu principale ha **4 voci** (Gare · Il Branco · Archivio · Contatti) più il pulsante fisso **Iscriviti**,
-che porta sempre all'evento in corso.
+Il menu ha **5 voci** più il pulsante fisso **Iscriviti**, che porta sempre all'evento in corso. Da mobile le 5
+voci stanno tutte in una riga sempre visibile, senza menu a scomparsa.
 
 ### Dove finisce ogni contenuto attuale
 
 | Contenuto attuale su WordPress | Nuova posizione |
 |---|---|
-| Home con articoli, widget, categorie, tag | Home con il solo evento in corso + 3 anteprime |
-| Pagine evento (`/effemeride/trail-sul-trebbio/`, `/effemeride/sveglia-presto-running/`…) | `/gare/<nome-evento>/` con un modello unico |
-| *Calendario eventi* (`/effemeride/`) | `/archivio/` (storico) e `/gare/` (eventi attivi) |
-| *Il branco* (elenchi soci per anno) | `/branco/` (presentazione) + elenco soci in `/archivio/` |
-| *Contatti* (`/about/`) | `/contatti/` |
-| *Rassegna stampa*, articoli del blog, tag | `/archivio/` |
-| Novità quotidiane | Restano sui social, già aggiornati dal direttivo |
+| Home con articoli in sequenza | Home con il solo evento in corso + calendario + branco |
+| `/effemeride/trail-sul-trebbio/` (moduli, regolamento, shop) | `trail-sul-trebbio.html`, ordinata per sezioni |
+| `/effemeride/` e pagine evento (Sveglia, Luna e Torre, Birronde, Aperitivo, Linci on Mountains) | `eventi.html` |
+| *Il branco*, *graduatoria*, *abbigliamento* | `branco.html` |
+| *Contatti* (`/about/`) | `contatti.html` |
+| 310 articoli, rassegna stampa, meme, pagine per anno | `archivio.html`, con link agli originali |
+| Novità quotidiane | Restano sui social, come già avviene |
 
-Non serve più scrivere articoli sul sito per ogni notizia: le notizie vanno sui social come avviene già oggi,
-e il sito mostra solo le informazioni che servono a chi corre.
+**Nessun link si rompe.** Gli indirizzi vecchi già stampati sulle locandine o condivisi sui social
+(per esempio `/effemeride/trail-sul-trebbio/`) vengono reindirizzati alle nuove pagine (`netlify.toml`).
+Gli articoli restano su `corriconlelinci.wordpress.com`, che dopo il passaggio del dominio continua a funzionare
+gratis come archivio, senza migrare nulla a mano.
 
 ### Flusso ideale di un runner da smartphone
 
@@ -88,8 +86,8 @@ Instagram / Facebook / WhatsApp / Google "trail sul trebbio"
      ┌───────────┼──────────────┬───────────────────┐
      ▼           ▼              ▼                   ▼
  Iscrizione   Traccia GPX   Regolamento PDF   Luogo su Google Maps
- (ENDU o      (download     (apertura          (navigatore)
-  modulo)      diretto)      diretta)
+ (Google       (download     (apertura          (navigatore)
+  Form)        diretto)      diretta)
      │
      ▼  scroll
  Percorsi · Dislivello · Ristori (card)  →  Aggiungi al calendario (.ics)
@@ -153,46 +151,58 @@ Con il sito statico la pubblicità sparisce e l'unico costo fisso resta il rinno
 
 ---
 
-## Sezione 3: Prototipo home page mobile-first
+## Sezione 3: Il nuovo sito (mobile-first, statico)
 
-**File:** [`index.html`](./index.html). È un singolo file HTML con Tailwind CSS (Play CDN) e circa 100 righe di JavaScript, senza dipendenze da installare.
+**Cartella:** [`le-linci/`](./). Sono 6 pagine HTML con Tailwind CSS già compilato (`assets/styles.css`, 30 KB)
+e un solo file JavaScript (`assets/site.js`), senza framework né CDN per gli stili.
+
+```
+le-linci/
+├── index.html  trail-sul-trebbio.html  eventi.html  branco.html  archivio.html  contatti.html
+├── assets/        styles.css (compilato) · site.js · img/ (logo, foto e locandine ottimizzate, 1,5 MB)
+├── src/           input.css (stili) · partials/header.html, footer.html (parti comuni)
+├── tools/         sync_partials.py (copia header/footer in tutte le pagine)
+│                  build_archivio.py (rigenera l'archivio dall'API di WordPress.com)
+├── netlify.toml   redirect dai vecchi indirizzi + cache
+└── package.json   npm run build → ricompila il CSS
+```
 
 ### Cosa contiene
 
 | Requisito | Implementazione |
 |---|---|
-| Header sticky | Logo "Le Linci", indicatore "Prossima gara: Trebbio · 15 nov" con pallino animato, nav a 4 voci (su mobile riga sempre visibile, senza menu a scomparsa), pulsante *Iscriviti* |
-| Hero "Trail sul Trebbio" | Badge *Prossimo evento · 11ª edizione*, data, ora (9:30) e luogo (Modigliana, Camping La Luna sul Trebbio, link a Maps) a caratteri grandi |
-| CTA | **Iscriviti ora** (56 px di altezza, larghezza piena da mobile); *Traccia GPX* e *Regolamento PDF* come secondari |
-| Extra hero | Countdown live, "Aggiungi al calendario" (file `.ics` per iPhone e Android), nota iscrizioni (aperte dal 1° ottobre, max 150, requisiti 19 km) |
-| Quick card | **Percorsi** (19 km competitiva a coppie, 10 km ludico-motoria, 1,2 km Kids trail, quote), **Dislivello** (19 km ~1.000 m D+, tempo massimo 4 h), **Ristori** (lungo il percorso e all'arrivo, terzo tempo con vino rosso e polenta al cinghiale) |
-| Chi siamo & Allenamenti | Presentazione del branco (dal 2013, Faenza), eventi dell'anno (Sveglia Presto Running, Meeting Run, Trebbio, Notturne Trail e Birrabranco), **Linciodromo** (lunedì dalle 18:00, Parco Bucci) |
-| Contatti & modulo | Email associazione e Trail, card social (Instagram, Facebook @lincipodismo, X @le_linci), modulo Netlify Forms (interesse, nome, email, messaggio, consenso privacy, honeypot antispam), invio senza ricaricare la pagina |
-| Footer | Pol. Dil. Santa Lucia, Via S. Mamante 71, Faenza, link utili, social, copyright automatico |
-| Mobile UX | Barra *Iscriviti* fissa in basso (zona pollice) che compare quando il CTA principale esce dallo schermo; aree cliccabili ≥ 44 px; safe-area iPhone; nessuno scroll orizzontale a 390 px |
-| Accessibilità | Skip link, landmark e `aria-label`, testi alternativi, contrasto AA, rispetto di `prefers-reduced-motion` |
+| Header sticky | Logo originale delle Linci (reso trasparente), indicatore "Prossima gara: Trebbio · 15 nov", 5 voci di menu, pulsante *Iscriviti* |
+| Hero "Trail sul Trebbio" | Foto della locandina 2026, badge *11ª edizione* e *Novità: si corre a coppie*, data, ora (9:30, pettorali 8:00–9:15) e luogo (link al navigatore) a caratteri grandi |
+| CTA | **Iscriviti ora** (56 px, larghezza piena da mobile) verso i 4 moduli ufficiali; *Percorso e GPX* e *Regolamento* come secondari |
+| Quick card | **Percorsi** (19 km a coppie, 10 km ludico-motoria, Kids 1,2 km), **Dislivello** (900 m D+, tempo limite 4 h), **Ristori** (2 sulla 19 km, 1 sulla 10 km, pasta party, ecotazza obbligatoria) |
+| Chi siamo & Allenamenti | Testi originali del branco, foto vere, **Linciodromo** ogni lunedì dalle 18 al Parco Bucci |
+| Contatti & modulo | Email associazione ed eventi, telefono sede, social, moduli Netlify Forms con honeypot antispam e consenso privacy |
+| Footer | Logo con *pelofulgidosempre*, Pol. Dil. Santa Lucia, Via S. Mamante 71, Faenza, link, social |
+| Identità | Giallo fluo e blu delle maglie e delle locandine, motti originali ("Ciò che trail!", "grr grr grr", "pelo fulgido sempre") |
+| Funzioni utili da telefono | Countdown, *Aggiungi al calendario* (.ics), *Copia IBAN*, *Salva i 3 numeri dell'organizzazione* (.vcf, sono materiale obbligatorio), calendario che segna da solo gli eventi passati, ricerca nell'archivio |
+| Mobile UX | Barra *Iscriviti* fissa in basso che compare quando il pulsante principale esce dallo schermo; aree cliccabili ≥ 44 px; safe-area iPhone; nessuno scroll orizzontale a 390 px |
+| SEO e condivisione | Titoli e descrizioni per pagina, anteprima WhatsApp/Facebook con la locandina, dati strutturati `SportsEvent` per Google |
+| Accessibilità | Skip link, landmark, testi alternativi, contrasto AA, `prefers-reduced-motion` |
 
-Il rendering è stato verificato con Chromium headless a 390×844 (iPhone) e 1280×900 (desktop): nessun errore
-JavaScript e nessuno scroll orizzontale.
+Verificato con Chromium headless a 390×844 e 1280×900 su tutte e 6 le pagine: nessun errore JavaScript, nessuna
+risorsa mancante, nessuno scroll orizzontale. Testati anche countdown, calendario, barra fissa, download .ics e
+.vcf, ricerca in archivio e modulo.
 
 ### Come provarlo e pubblicarlo
 
-- **Anteprima locale:** doppio clic su `index.html`. Il modulo in locale mostra un messaggio di anteprima.
+- **Anteprima locale:** doppio clic su `index.html`. In locale i moduli mostrano un messaggio di anteprima.
 - **Pubblicazione gratuita su Netlify:** trascinare la cartella `le-linci/` su https://app.netlify.com/drop.
-  Si ottiene un indirizzo `*.netlify.app` da mandare a Davide, e il modulo funziona subito.
-- **Per la produzione:** compilare il CSS una volta sola (`npx tailwindcss -o styles.css --minify`) e
-  sostituire lo script della Play CDN con `<link rel="stylesheet" href="styles.css">`. La pagina diventa più veloce
-  e indipendente dalla CDN.
+  Si ottiene un indirizzo `*.netlify.app` da mandare a Davide; moduli e redirect funzionano subito.
+- **Modifiche:** si modifica l'HTML; se si cambiano header o footer, `python3 tools/sync_partials.py`; se si usano
+  classi Tailwind nuove, `npm install` una volta e poi `npm run build`.
 
 ### Da completare prima della messa online
 
-- [ ] Togliere la fascia "Mockup di proposta" in cima.
-- [ ] Confermare ora di partenza, quote, dislivello, tempo massimo e ristori 2026 (regolamento del 27/08/26).
-- [ ] Link d'iscrizione: oggi punta a `endu.net/events/trail-sul-trebbio`. Verificare la piattaforma 2026 e poi rimuovere l'attributo `data-placeholder`.
-- [ ] Caricare `files/trail-sul-trebbio-2026.gpx` e `files/regolamento-trail-sul-trebbio-2026.pdf`, poi rimuovere `data-placeholder` dai due pulsanti.
-- [ ] Inserire codice fiscale dell'associazione e informativa privacy nel footer.
+- [ ] Traccia GPX ufficiale della 19 km in `assets/trail-sul-trebbio-2026-19km.gpx`, poi togliere `data-da-fornire` dal pulsante.
+- [ ] Codice fiscale / P.IVA della Pol. Dil. Santa Lucia nel footer (`src/partials/footer.html`).
+- [ ] Far validare dal direttivo il testo privacy in `contatti.html`.
 - [ ] Netlify → Forms → Notifications: inoltro a `lelinci.brancopodistico@gmail.com`.
-- [ ] Aggiungere una foto reale del branco o del Trebbio nell'hero (facoltativo, rende molto).
+- [ ] Facoltativo: elenco nominativo delle linci per anno in `branco.html` (oggi solo i numeri, per scelta di privacy).
 
 ---
 
@@ -207,14 +217,13 @@ JavaScript e nessuno scroll orizzontale.
 >
 > 👉 **[LINK AL MOCKUP – es. https://lelinci-mockup.netlify.app]**
 >
-> Ho usato i vostri contenuti reali (11° Trail sul Trebbio del 15 novembre, il Linciodromo del lunedì al
-> Parco Bucci, Sveglia Presto Running, Meeting Run…). I dettagli 2026 come quote e dislivello li ho presi
-> dall'anno scorso, quindi vanno solo confermati.
+> È fatto tutto con i vostri contenuti: il regolamento 2026 del Trebbio con i vostri moduli Google,
+> le locandine, le foto del Linciodromo, il calendario dell'anno e i 310 articoli del blog in archivio.
 >
 > In tre punti, perché secondo me vi semplifica la vita:
 >
 > 1. **Chi si iscrive dal telefono trova subito tutto.** Data, ora, luogo e il pulsante "Iscriviti" sono nel
->    primo schermo; GPX, regolamento e navigatore sono a un tocco. I 170 link di oggi finiscono in un archivio
+>    primo schermo; GPX, regolamento e navigatore sono a un tocco. I 172 link della home di oggi finiscono in un archivio
 >    ordinato, così non si perde niente.
 > 2. **Niente pubblicità e costi quasi a zero.** Il sito diventa un insieme di pagine leggere ospitate
 >    gratis: resta solo il rinnovo del dominio, circa 12 € l'anno. Per togliere i banner su WordPress.com
@@ -235,8 +244,10 @@ JavaScript e nessuno scroll orizzontale.
 
 ---
 
-## Fonti dei dati usati nel prototipo
+## Fonti dei dati
 
+- [Regolamento Trail sul Trebbio 2026, rev. 27/08/26](https://corriconlelinci.wordpress.com/wp-content/uploads/2026/09/2026-regolamento-rev.2026-08-27.docx)
+- [API pubblica WordPress.com del sito (pagine e articoli)](https://public-api.wordpress.com/wp/v2/sites/corriconlelinci.com/posts)
 - [corriconlelinci.com: Home](https://corriconlelinci.com/)
 - [corriconlelinci.com: Il branco](https://corriconlelinci.com/il-branco/)
 - [corriconlelinci.com: Contatti](https://corriconlelinci.com/about/)
@@ -246,6 +257,4 @@ JavaScript e nessuno scroll orizzontale.
 - [corriconlelinci.com: Sveglia Presto Running](https://corriconlelinci.com/effemeride/sveglia-presto-running/)
 - [Il Piccolo: Trail sul Trebbio 16 novembre 2025](https://ilpiccolo.org/ilpiccolo/2025/11/trail-sul-trebbio-16-novembre/)
 - [ForlìToday: programma Trail sul Trebbio 2025](https://www.forlitoday.it/eventi/trail-sul-trebbio-programma-16-novembre-2025.html)
-- [Finishers: Trail sul Trebbio 2026](https://www.finishers.com/it/evento/trail-sul-trebbio)
-- [ENDU: Trail sul Trebbio](https://www.endu.net/events/trail-sul-trebbio)
-- [Facebook: Le Linci - Branco Podistico](https://www.facebook.com/lincipodismo/)
+- [Facebook: Le Linci - Branco Podistico](https://www.facebook.com/Le-Linci-Branco-Podistico-1658052867794894/)

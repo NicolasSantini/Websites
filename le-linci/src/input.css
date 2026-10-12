@@ -1,0 +1,41 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html { scroll-behavior: smooth; -webkit-tap-highlight-color: transparent; }
+  body { @apply bg-carta font-sans text-blu-950 antialiased; }
+  [id] { scroll-margin-top: 7.5rem; }
+  :focus-visible { @apply outline-none ring-4 ring-azzurro-400/70; }
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    *, *::before, *::after { transition: none !important; animation: none !important; }
+  }
+}
+
+@layer components {
+  .contenitore { @apply mx-auto max-w-6xl px-4; }
+  .titolo { @apply font-display text-4xl font-extrabold uppercase leading-none text-blu-900 md:text-5xl; }
+  .occhiello { @apply text-sm font-semibold uppercase tracking-wider text-blu-700; }
+  .card { @apply rounded-3xl bg-white p-6 shadow-sm ring-1 ring-blu-100; }
+  .chip { @apply inline-flex items-center rounded-full px-2.5 py-0.5 text-xs font-semibold; }
+
+  .btn { @apply inline-flex min-h-[48px] items-center justify-center gap-2 rounded-2xl px-5 font-semibold transition; }
+  .btn-primario { @apply btn bg-giallo-400 font-display text-xl font-extrabold uppercase tracking-wide text-blu-950 shadow-lg shadow-giallo-400/20 hover:bg-giallo-300; }
+  .btn-scuro { @apply btn bg-blu-900 text-white hover:bg-blu-800; }
+  .btn-contorno { @apply btn border border-current hover:bg-white/10; }
+
+  .nav-link { @apply flex min-h-[44px] shrink-0 items-center px-2.5 text-sm lg:px-3 font-medium text-white/85 hover:text-giallo-400; }
+  .nav-link[aria-current="page"] { @apply text-giallo-400; }
+
+  .campo { @apply mt-1 block min-h-[48px] w-full rounded-xl border border-blu-100 bg-carta px-3 text-base focus:border-blu-700 focus:outline-none focus:ring-2 focus:ring-blu-700/20; }
+  .prosa p { @apply mt-3 leading-relaxed; }
+  .prosa a { @apply font-medium text-blu-700 underline underline-offset-4; }
+}
+
+@layer utilities {
+  .no-scrollbar { scrollbar-width: none; }
+  .no-scrollbar::-webkit-scrollbar { display: none; }
+  .pb-barra { padding-bottom: calc(5.5rem + env(safe-area-inset-bottom)); }
+  @media (min-width: 768px) { .pb-barra { padding-bottom: 0; } }
+}

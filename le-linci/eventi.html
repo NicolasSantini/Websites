@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Eventi e calendario · Le Linci</title>
+  <meta name="description" content="Le gare e gli eventi organizzati dalle Linci di Faenza: Sotto la Luna e la Torre, Sveglia Presto Running, Meeting Run Basiago, Trail sul Trebbio, Birronde e molto altro.">
+  <meta name="theme-color" content="#14224a">
+  <link rel="icon" type="image/png" href="assets/img/favicon.png">
+  <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=Caveat:wght@600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/styles.css">
+  <script src="assets/site.js" defer></script>
+</head>
+<body data-pagina="eventi">
+
+<!-- HEADER:START -->
+<a href="#contenuto" class="sr-only focus:not-sr-only focus:fixed focus:left-2 focus:top-2 focus:z-50 focus:rounded-lg focus:bg-giallo-400 focus:px-4 focus:py-2 focus:font-semibold">Vai al contenuto</a>
+<header class="sticky top-0 z-40 border-b border-white/10 bg-blu-900/95 text-white backdrop-blur">
+  <div class="contenitore flex items-center justify-between gap-3 py-2.5">
+    <a href="index.html" class="flex min-h-[44px] shrink-0 items-center" aria-label="Le Linci - Branco Podistico, vai alla home">
+      <img src="assets/img/logo-compatto-bianco.png" alt="Le Linci - Branco Podistico" width="640" height="161" class="h-8 w-auto sm:h-9">
+    </a>
+    <a href="trail-sul-trebbio.html" class="hidden items-center gap-2 rounded-full border border-giallo-400/40 bg-giallo-400/10 px-3 py-1.5 text-sm xl:flex">
+      <span class="relative flex h-2.5 w-2.5" aria-hidden="true"><span class="absolute inline-flex h-full w-full animate-ping rounded-full bg-giallo-400 opacity-75"></span><span class="relative inline-flex h-2.5 w-2.5 rounded-full bg-giallo-400"></span></span>
+      <span class="text-white/70">Prossima gara:</span> <strong class="text-giallo-400">Trebbio · 15 nov</strong>
+    </a>
+    <nav class="hidden items-center md:flex" aria-label="Navigazione principale">
+      <a href="trail-sul-trebbio.html" data-pagina="trebbio" class="nav-link">Trail sul Trebbio</a>
+      <a href="eventi.html" data-pagina="eventi" aria-current="page" class="nav-link">Eventi</a>
+      <a href="branco.html" data-pagina="branco" class="nav-link">Il Branco</a>
+      <a href="archivio.html" data-pagina="archivio" class="nav-link">Archivio</a>
+      <a href="contatti.html" data-pagina="contatti" class="nav-link">Contatti</a>
+    </nav>
+    <a href="trail-sul-trebbio.html#iscrizioni" class="btn-primario min-h-[44px] rounded-full px-4 text-base">Iscriviti</a>
+  </div>
+  <nav class="no-scrollbar flex justify-between overflow-x-auto border-t border-white/10 md:hidden" aria-label="Navigazione principale (mobile)">
+    <a href="trail-sul-trebbio.html" data-pagina="trebbio" class="nav-link gap-1.5"><span class="h-2 w-2 rounded-full bg-giallo-400" aria-hidden="true"></span>Trebbio</a>
+    <a href="eventi.html" data-pagina="eventi" aria-current="page" class="nav-link">Eventi</a>
+    <a href="branco.html" data-pagina="branco" class="nav-link">Il Branco</a>
+    <a href="archivio.html" data-pagina="archivio" class="nav-link">Archivio</a>
+    <a href="contatti.html" data-pagina="contatti" class="nav-link">Contatti</a>
+  </nav>
+</header>
+<!-- HEADER:END -->
+
+<main id="contenuto">
+  <section class="bg-blu-900 text-white">
+    <div class="contenitore py-10 md:py-16">
+      <p class="font-mano text-3xl text-giallo-400">spirito lincesco</p>
+      <h1 class="mt-1 font-display text-6xl font-extrabold uppercase leading-[0.9] md:text-7xl">Eventi</h1>
+      <p class="mt-4 max-w-2xl text-lg text-white/85">Come gruppo sportivo non stiamo con le mani in mano: ci piace organizzare per chi ha la nostra stessa passione.
+        In ogni evento mettiamo al centro chi partecipa, che sia uno o che siano in tanti. Se se ne vanno col sorriso, la missione è compiuta.</p>
+    </div>
+  </section>
+
+  <!-- ============ CALENDARIO 2026 ============ -->
+  <section class="contenitore py-12" aria-labelledby="titolo-cal">
+    <h2 id="titolo-cal" class="titolo">Calendario 2026</h2>
+    <ol class="mt-6 grid gap-3 sm:grid-cols-2 lg:grid-cols-3" data-calendario>
+      <li data-quando="2026-01-05" class="rounded-2xl bg-white p-4 ring-1 ring-blu-100"><div class="flex items-center justify-between"><p class="font-display text-lg font-bold uppercase text-blu-700">Lun 5 gennaio</p><span data-stato class="chip bg-blu-100 text-blu-900"></span></div><p class="font-display text-2xl font-bold">Giro dei Rioni</p><p class="text-sm text-blu-800/80">Per la Not de Bisò: 5 anelli da Piazza del Popolo tra le sedi dei rioni di Faenza.</p></li>
+      <li data-quando="2026-02-08" class="rounded-2xl bg-white p-4 ring-1 ring-blu-100"><div class="flex items-center justify-between"><p class="font-display text-lg font-bold uppercase text-blu-700">Dom 8 febbraio</p><span data-stato class="chip bg-blu-100 text-blu-900"></span></div><p class="font-display text-2xl font-bold">New Gimn Urban Race</p><p class="text-sm text-blu-800/80">10 km o 6,5 km. Organizza la palestra New Gimn, le Linci collaborano e fanno il tifo.</p></li>
+      <li data-quando="2026-03-05" class="rounded-2xl bg-white p-4 ring-1 ring-blu-100"><div class="flex items-center justify-between"><p class="font-display text-lg font-bold uppercase text-blu-700">Gio 5 marzo</p><span data-stato class="chip bg-blu-100 text-blu-900"></span></div><p class="font-display text-2xl font-bold">Sotto la Luna e la Torre</p><p class="text-sm text-blu-800/80">12ª edizione della notturna ludico-motoria.</p></li>
+      <li data-quando="2026-03-23" data-fino="2026-12-31" data-ricorrente class="rounded-2xl bg-white p-4 ring-1 ring-blu-100"><div class="flex items-center justify-between"><p class="font-display text-lg font-bold uppercase text-blu-700">Ogni lunedì</p><span data-stato class="chip bg-blu-100 text-blu-900"></span></div><p class="font-display text-2xl font-bold">Linciodromo</p><p class="text-sm text-blu-800/80">Dalle 18 al Parco Bucci, in senso orario.</p></li>
+      <li data-quando="2026-04-26" class="rounded-2xl bg-white p-4 ring-1 ring-blu-100"><div class="flex items-center justify-between"><p class="font-display text-lg font-bold uppercase text-blu-700">Dom 26 aprile</p><span data-stato class="chip bg-blu-100 text-blu-900"></span></div><p class="font-display text-2xl font-bold">Podistica di Primavera</p><p class="text-sm text-blu-800/80">19ª edizione con la sagra di primavera a Pieve Corleto: 9 km pianeggianti, premiati i gruppi più numerosi.</p></li>
+      <li data-quando="2026-05-01" class="rounded-2xl bg-white p-4 ring-1 ring-blu-100"><div class="flex items-center justify-between"><p class="font-display text-lg font-bold uppercase text-blu-700">Ven 1 maggio</p><span data-stato class="chip bg-blu-100 text-blu-900"></span></div><p class="font-display text-2xl font-bold">Spasigeda ad Sata Lusa</p><p class="text-sm text-blu-800/80">52° anno: camminata ludico-motoria di 9 km collinari e festa.</p></li>
+      <li data-quando="2026-05-03" class="rounded-2xl bg-white p-4 ring-1 ring-blu-100"><div class="flex items-center justify-between"><p class="font-display text-lg font-bold uppercase text-blu-700">Dom 3 maggio</p><span data-stato class="chip bg-blu-100 text-blu-900"></span></div><p class="font-display text-2xl font-bold">Combinata in bici</p><p class="text-sm text-blu-800/80">Raduno bici da corsa e 35 km di MTB, poi pasta party dalle 9:30.</p></li>
+      <li data-quando="2026-06-24" class="rounded-2xl bg-white p-4 ring-1 ring-blu-100"><div class="flex items-center justify-between"><p class="font-display text-lg font-bold uppercase text-blu-700">Mer 24 giugno</p><span data-stato class="chip bg-blu-100 text-blu-900"></span></div><p class="font-display text-2xl font-bold">Staffetta ad San Pir</p><p class="text-sm text-blu-800/80">39ª edizione: 6 giri da 2,3 km dal piazzale del Rione Nero, massimo 30 squadre.</p></li>
+      <li data-quando="2026-07-12" class="rounded-2xl bg-white p-4 ring-1 ring-blu-100"><div class="flex items-center justify-between"><p class="font-display text-lg font-bold uppercase text-blu-700">Dom 12 luglio</p><span data-stato class="chip bg-blu-100 text-blu-900"></span></div><p class="font-display text-2xl font-bold">Sveglia Presto Running</p><p class="text-sm text-blu-800/80">All'alba: saluto al sole alle 5:30, partenza alle 5:59.</p></li>
+      <li data-quando="2026-09-13" class="rounded-2xl bg-white p-4 ring-1 ring-blu-100"><div class="flex items-center justify-between"><p class="font-display text-lg font-bold uppercase text-blu-700">Dom 13 settembre</p><span data-stato class="chip bg-blu-100 text-blu-900"></span></div><p class="font-display text-2xl font-bold">Meeting Run Basiago</p><p class="text-sm text-blu-800/80">44° meeting di fine estate, 10 o 6 km su strada.</p></li>
+      <li data-quando="2026-11-15" class="rounded-2xl bg-white p-4 ring-1 ring-blu-100"><div class="flex items-center justify-between"><p class="font-display text-lg font-bold uppercase text-blu-700">Dom 15 novembre</p><span data-stato class="chip bg-blu-100 text-blu-900"></span></div><p class="font-display text-2xl font-bold"><a href="trail-sul-trebbio.html" class="underline decoration-giallo-400 decoration-4 underline-offset-4">Trail sul Trebbio</a></p><p class="text-sm text-blu-800/80">11ª edizione: 19 km a coppie, 10 km e Kids trail.</p></li>
+      <li data-quando="2026-12-31" class="rounded-2xl bg-white p-4 ring-1 ring-blu-100"><div class="flex items-center justify-between"><p class="font-display text-lg font-bold uppercase text-blu-700">Dicembre</p><span data-stato class="chip bg-blu-100 text-blu-900"></span></div><p class="font-display text-2xl font-bold">Aperitivo di fine anno solare</p><p class="text-sm text-blu-800/80">Auguri gialloblù, coretti e il sorteggione di Scream.</p></li>
+    </ol>
+  </section>
+
+  <!-- ============ LE NOSTRE GARE ============ -->
+  <section class="bg-white py-12" aria-labelledby="titolo-gare">
+    <div class="contenitore">
+      <h2 id="titolo-gare" class="titolo">Le nostre gare</h2>
+      <div class="mt-8 space-y-10">
+
+        <article id="trebbio" class="grid gap-6 md:grid-cols-[260px_1fr]">
+          <img src="assets/img/locandina-trebbio-2026.jpg" alt="Locandina Trail sul Trebbio 2026" width="900" height="1126" loading="lazy" class="w-full max-w-[260px] rounded-2xl shadow-md">
+          <div>
+            <p class="occhiello">Novembre · Modigliana · 11ª edizione</p>
+            <h3 class="mt-1 font-display text-4xl font-extrabold uppercase">Trail sul Trebbio</h3>
+            <p class="mt-3 text-blu-800/90">La nostra gara sui sentieri: 19 km con 900 m D+ (dal 2026 a coppie), 10 km ludico-motoria e Kids trail, partenza e arrivo al Camping La Luna sul Trebbio. Vale per il campionato trail UISP territoriale.</p>
+            <a href="trail-sul-trebbio.html" class="btn-primario mt-4">Info e iscrizioni 2026</a>
+          </div>
+        </article>
+
+        <article id="sotto-la-luna" class="grid gap-6 md:grid-cols-[260px_1fr]">
+          <img src="assets/img/locandina-luna-2026.jpg" alt="Locandina Sotto la Luna e la Torre 2026" width="700" height="968" loading="lazy" class="w-full max-w-[260px] rounded-2xl shadow-md">
+          <div>
+            <p class="occhiello">Marzo · giovedì sera · dal 2015</p>
+            <h3 class="mt-1 font-display text-4xl font-extrabold uppercase">Sotto la Luna e la Torre</h3>
+            <p class="mt-3 text-blu-800/90">Corsa e camminata ludico-motoria in notturna, 10 o 5 km. Ritrovo dalle 18:30 al circolo Arci Santa Lucia, partenza alle 19:45. Ristoro a metà percorso e pasta party finale con wrap romagnolo, biscotti e vino rosso, garantito ai primi 200 iscritti.</p>
+            <ul class="mt-3 flex flex-wrap gap-2 text-sm">
+              <li class="chip bg-giallo-100 py-1 text-blu-900">Quota 10 € (2026)</li>
+              <li class="chip bg-blu-100 py-1 text-blu-900">Luce e gilet ad alta visibilità obbligatori</li>
+              <li class="chip bg-blu-100 py-1 text-blu-900">Docce disponibili</li>
+            </ul>
+            <p class="mt-3 text-sm">Info: <a href="mailto:sottolalunaelatorre@gmail.com" class="font-medium text-blu-700 underline">sottolalunaelatorre@gmail.com</a></p>
+          </div>
+        </article>
+
+        <article id="sveglia-presto" class="grid gap-6 md:grid-cols-[260px_1fr]">
+          <img src="assets/img/locandina-sveglia-2026.jpg" alt="Locandina Sveglia Presto Running 2026" width="700" height="990" loading="lazy" class="w-full max-w-[260px] rounded-2xl shadow-md">
+          <div>
+            <p class="occhiello">Luglio · all'alba</p>
+            <h3 class="mt-1 font-display text-4xl font-extrabold uppercase">Sveglia Presto Running</h3>
+            <p class="mt-3 text-blu-800/90">Bisogna stropicciarsi gli occhi e infilarsi le scarpe, poi per svegliarsi c'è sempre tempo. Ritrovo al circolo Arci Santa Lucia di Faenza, saluto al sole alle 5:30 con La Piccola India, partenza unica alle 5:59. Percorsi da 9 o 6 km con ristoro a metà.</p>
+            <ul class="mt-3 flex flex-wrap gap-2 text-sm">
+              <li class="chip bg-giallo-100 py-1 text-blu-900">10 € con colazione e gadget (2026)</li>
+              <li class="chip bg-blu-100 py-1 text-blu-900">Max 200 iscritti</li>
+              <li class="chip bg-blu-100 py-1 text-blu-900">Bambini fino a 10 anni gratis</li>
+            </ul>
+            <p class="mt-3 text-sm">Info: <a href="mailto:svegliaprestorunning@gmail.com" class="font-medium text-blu-700 underline">svegliaprestorunning@gmail.com</a></p>
+          </div>
+        </article>
+
+        <article id="meeting-run" class="grid gap-6 md:grid-cols-[260px_1fr]">
+          <img src="assets/img/locandina-meeting-2026.jpg" alt="Locandina Meeting Run Basiago 2026" width="700" height="965" loading="lazy" class="w-full max-w-[260px] rounded-2xl shadow-md">
+          <div>
+            <p class="occhiello">Settembre · Basiago</p>
+            <h3 class="mt-1 font-display text-4xl font-extrabold uppercase">Meeting Run Basiago</h3>
+            <p class="mt-3 text-blu-800/90">Corsa e camminata non competitiva su strada per il meeting di fine estate di Basiago (Faenza), in collaborazione con le Linci. Iscrizioni dalle 8:30 alla parrocchia, partenza alle 9:30, percorsi da 10 o 6 km con ristoro a metà.</p>
+            <ul class="mt-3 flex flex-wrap gap-2 text-sm">
+              <li class="chip bg-giallo-100 py-1 text-blu-900">5 € con buono pasto (2026)</li>
+              <li class="chip bg-blu-100 py-1 text-blu-900">Premiate le 5 squadre più numerose</li>
+            </ul>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ VITA DI BRANCO ============ -->
+  <section class="contenitore py-12" aria-labelledby="titolo-vita">
+    <h2 id="titolo-vita" class="titolo">Vita di branco</h2>
+    <div class="mt-6 grid gap-4 md:grid-cols-3">
+      <article class="card">
+        <h3 class="font-display text-2xl font-bold uppercase">Birronde</h3>
+        <p class="mt-2 text-blu-800/90">D'estate andiamo a correre da chi ci ristora con un bel boccalone di birra. Ogni anno cambia nome: Corse Luppoline, Scorribirra, Sgambirrette, Trinka Branko, Birraccozzi, Maratrinka…</p>
+      </article>
+      <article class="card">
+        <h3 class="font-display text-2xl font-bold uppercase">Aperitivo di fine anno</h3>
+        <p class="mt-2 text-blu-800/90">Tutti gli anni ci facciamo gli auguri per un anno giallo e blu (o blu e giallo), col passo felpato. Negli ultimi anni con coretti e il sorteggione di Scream.</p>
+      </article>
+      <article class="card">
+        <h3 class="font-display text-2xl font-bold uppercase">Linci on Mountains</h3>
+        <p class="mt-2 text-blu-800/90">Una volta all'anno si va per rifugi, carne e vino rosso: una notte nei boschi, roba da felini selvaggi.</p>
+      </article>
+    </div>
+    <figure class="mt-6">
+      <img src="assets/img/sveglia-ristoro.jpg" alt="Lo staff delle Linci al ristoro della Sveglia Presto Running 2026" width="1200" height="676" loading="lazy" class="aspect-[16/7] w-full rounded-3xl object-cover">
+      <figcaption class="mt-2 text-sm text-blu-800/80">Lo staff più fulgido della zona alla Sveglia Presto Running 2026.</figcaption>
+    </figure>
+  </section>
+
+  <!-- ============ STORICO ============ -->
+  <section class="bg-blu-900 py-12 text-white" aria-labelledby="titolo-storico">
+    <div class="contenitore">
+      <h2 id="titolo-storico" class="font-display text-4xl font-extrabold uppercase md:text-5xl">Più di 10 anni di eventi</h2>
+      <p class="mt-3 max-w-2xl text-white/80">Ecco cosa abbiamo combinato dal 2013 a oggi. Foto e racconti sono nell'<a href="archivio.html" class="font-semibold text-giallo-400 underline underline-offset-4">archivio</a>.</p>
+      <ul class="mt-6 flex flex-wrap gap-2 text-sm">
+        <li class="rounded-full bg-white/10 px-3 py-1.5">Sveglia Presto Running</li><li class="rounded-full bg-white/10 px-3 py-1.5">Birrabranco</li><li class="rounded-full bg-white/10 px-3 py-1.5">Trail sul Trebbio</li><li class="rounded-full bg-white/10 px-3 py-1.5">Camminata del glaucoma</li><li class="rounded-full bg-white/10 px-3 py-1.5">Raccozzo di fine anno</li><li class="rounded-full bg-white/10 px-3 py-1.5">Scorribirra</li><li class="rounded-full bg-white/10 px-3 py-1.5">Hamburgherata Precento</li><li class="rounded-full bg-white/10 px-3 py-1.5">Sotto la Luna e la Torre</li><li class="rounded-full bg-white/10 px-3 py-1.5">Millennium Triathlon</li><li class="rounded-full bg-white/10 px-3 py-1.5">Notturne Trail</li><li class="rounded-full bg-white/10 px-3 py-1.5">Spasigeda ad Sata Lusa</li><li class="rounded-full bg-white/10 px-3 py-1.5">Corr clè Fred</li><li class="rounded-full bg-white/10 px-3 py-1.5">Il giro castellano</li><li class="rounded-full bg-white/10 px-3 py-1.5">Corse Luppoline</li><li class="rounded-full bg-white/10 px-3 py-1.5">Campionato Lincesco</li><li class="rounded-full bg-white/10 px-3 py-1.5">1 km per Dario</li><li class="rounded-full bg-white/10 px-3 py-1.5">Camminate di gusto</li><li class="rounded-full bg-white/10 px-3 py-1.5">Maratrinke</li><li class="rounded-full bg-white/10 px-3 py-1.5">Corr cus sa sera</li><li class="rounded-full bg-white/10 px-3 py-1.5">Raccozzo di Natale</li><li class="rounded-full bg-white/10 px-3 py-1.5">Podistica di Primavera</li><li class="rounded-full bg-white/10 px-3 py-1.5">Sgambirrette</li><li class="rounded-full bg-white/10 px-3 py-1.5">Spaghettata organizzatrice</li><li class="rounded-full bg-white/10 px-3 py-1.5">Mercante in fiera lincesco</li><li class="rounded-full bg-white/10 px-3 py-1.5">New Gym Urban Race</li><li class="rounded-full bg-white/10 px-3 py-1.5">10 eventi in 10 giorni</li><li class="rounded-full bg-white/10 px-3 py-1.5">AlCOOLrun</li><li class="rounded-full bg-white/10 px-3 py-1.5">Aperitivo di fine anno solare</li><li class="rounded-full bg-white/10 px-3 py-1.5">Piedibus lincesco</li><li class="rounded-full bg-white/10 px-3 py-1.5">Cena annuale autunnale</li><li class="rounded-full bg-white/10 px-3 py-1.5">Raccolta fondi per il pistino</li><li class="rounded-full bg-white/10 px-3 py-1.5">Birraccozzi</li><li class="rounded-full bg-white/10 px-3 py-1.5">21 il 21</li><li class="rounded-full bg-white/10 px-3 py-1.5">Meeting Run</li><li class="rounded-full bg-white/10 px-3 py-1.5">Linci on Mountains</li><li class="rounded-full bg-white/10 px-3 py-1.5">Camminata al Zoc ad Nadel</li><li class="rounded-full bg-white/10 px-3 py-1.5">Staffetta ad San Pir</li><li class="rounded-full bg-white/10 px-3 py-1.5">Unity Run</li><li class="rounded-full bg-white/10 px-3 py-1.5">Trinka Branko</li><li class="rounded-full bg-white/10 px-3 py-1.5">Camminate del mercoledì</li><li class="rounded-full bg-white/10 px-3 py-1.5">Notte dello Sport</li><li class="rounded-full bg-white/10 px-3 py-1.5">Camminata dei becchi</li><li class="rounded-full bg-white/10 px-3 py-1.5">Sgambate Dissetanti</li><li class="rounded-full bg-white/10 px-3 py-1.5">Birronde</li>
+      </ul>
+    </div>
+  </section>
+</main>
+
+<!-- FOOTER:START -->
+<footer class="bg-blu-950 text-white/75">
+  <div class="contenitore grid gap-8 py-10 text-sm md:grid-cols-4">
+    <div class="md:col-span-2">
+      <img src="assets/img/logo-bianco.png" alt="Le Linci - Branco Podistico, pelo fulgido sempre" width="640" height="277" class="h-20 w-auto">
+      <p class="mt-4">Branco podistico della <strong class="text-white">Pol. Dil. Santa Lucia</strong><br>
+        Via S. Mamante, 71 · 48018 Faenza (RA)<br>
+        Tel. <a href="tel:+390546642287" class="hover:text-giallo-400">0546 642287</a> ·
+        <a href="mailto:lelinci.brancopodistico@gmail.com" class="hover:text-giallo-400">lelinci.brancopodistico@gmail.com</a></p>
+      <!-- TODO: codice fiscale / P.IVA della Pol. Dil. Santa Lucia -->
+    </div>
+    <nav aria-label="Link utili">
+      <p class="font-semibold uppercase tracking-wider text-white">Il sito</p>
+      <ul class="mt-3 space-y-2">
+        <li><a href="trail-sul-trebbio.html" class="hover:text-giallo-400">Trail sul Trebbio 2026</a></li>
+        <li><a href="eventi.html" class="hover:text-giallo-400">Calendario eventi</a></li>
+        <li><a href="branco.html#linciodromo" class="hover:text-giallo-400">Linciodromo del lunedì</a></li>
+        <li><a href="archivio.html" class="hover:text-giallo-400">Archivio articoli</a></li>
+        <li><a href="contatti.html#privacy" class="hover:text-giallo-400">Privacy</a></li>
+      </ul>
+    </nav>
+    <div>
+      <p class="font-semibold uppercase tracking-wider text-white">Seguici</p>
+      <div class="mt-3 flex gap-3">
+        <a href="https://www.facebook.com/Le-Linci-Branco-Podistico-1658052867794894/" target="_blank" rel="noopener" aria-label="Facebook" class="grid h-12 w-12 place-items-center rounded-full bg-white/10 hover:bg-giallo-400 hover:text-blu-950">
+          <svg class="h-5 w-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M14 8h3V4h-3a4 4 0 00-4 4v2H8v4h2v8h4v-8h3l1-4h-4V8z"/></svg></a>
+        <a href="https://www.instagram.com/lelinci.brancopodistico/" target="_blank" rel="noopener" aria-label="Instagram" class="grid h-12 w-12 place-items-center rounded-full bg-white/10 hover:bg-giallo-400 hover:text-blu-950">
+          <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg></a>
+        <a href="https://x.com/le_linci" target="_blank" rel="noopener" aria-label="X / Twitter" class="grid h-12 w-12 place-items-center rounded-full bg-white/10 hover:bg-giallo-400 hover:text-blu-950">
+          <svg class="h-5 w-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M4 3h4.5l4 5.6L17 3h3l-6.1 7.5L21 21h-4.5l-4.4-6.1L7 21H4l6.6-8.1z"/></svg></a>
+      </div>
+      <p class="mt-6 font-mano text-3xl text-giallo-400">grr grr grr</p>
+    </div>
+  </div>
+  <div class="border-t border-white/10">
+    <p class="contenitore py-5 text-xs">© <span data-anno>2026</span> Le Linci - Branco Podistico · Pol. Dil. Santa Lucia, Faenza · Sito senza pubblicità e senza cookie di profilazione.</p>
+  </div>
+</footer>
+<!-- FOOTER:END -->
+</body>
+</html>
