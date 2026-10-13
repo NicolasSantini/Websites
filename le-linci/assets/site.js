@@ -170,6 +170,30 @@
     });
   });
 
+  // Newsletter: l'email va alla pagina ufficiale di iscrizione di WordPress.com del blog (stessa lista di oggi),
+  // che manda il link di conferma. La richiesta parte in background: il visitatore resta sul sito.
+  var ISCRIZIONE = 'https://subscribe.wordpress.com/memberships/?blog=64730052&plan=newsletter&source=jetpack_subscribe_block&lang=it';
+  $$('form[data-newsletter]').forEach(function (form) {
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+      var campo = $('input[name="email"]', form), esito = $('[data-esito]', form), btn = $('button[type="submit"]', form);
+      var mostra = function (html, ok) {
+        esito.innerHTML = html;
+        esito.className = 'mt-3 rounded-xl p-3 text-sm ' + (ok ? 'bg-azzurro-100 text-blu-900' : 'bg-giallo-100 text-blu-900');
+      };
+      var email = campo.value.trim();
+      if (!campo.checkValidity() || !email) { mostra('Controlla l’indirizzo email: sembra incompleto.', false); campo.focus(); return; }
+      if (location.protocol === 'file:') { mostra('Anteprima: sul sito online qui parte l’email di conferma di WordPress.com.', true); return; }
+      btn.disabled = true;
+      fetch(ISCRIZIONE + '&email=' + encodeURIComponent(email), { mode: 'no-cors', credentials: 'omit' }).then(function () {
+        mostra('<strong>Quasi fatto!</strong> Ti abbiamo mandato un’email di conferma (mittente WordPress.com): clicca il link per completare l’iscrizione. Controlla anche lo spam.', true);
+        form.reset();
+      }).catch(function () {
+        mostra('Non siamo riusciti a contattare il servizio della newsletter. Riprova tra poco.', false);
+      }).finally(function () { btn.disabled = false; });
+    });
+  });
+
   // ================= Contenuti da WordPress.com =================
   // Le Linci continuano a scrivere articoli e pagine su WordPress.com (anche dall'app sul telefono):
   // il sito li legge dall'API pubblica e li mostra con la sua grafica, senza pubblicità.
@@ -335,8 +359,6 @@
     var par = new URLSearchParams(location.search);
     var tipo = par.get('pagina') ? 'pages' : 'posts';
     var slug = par.get('pagina') || par.get('articolo') || '';
-    var originale = $('[data-wp-originale]');
-    if (originale) originale.href = VECCHIO + '/' + (tipo === 'pages' ? slug + '/' : '?name=' + encodeURIComponent(slug));
     if (PAGINE_NUOVE[slug] && tipo === 'pages' && !par.has('integrale')) { location.replace(PAGINE_NUOVE[slug]); return; }
     wp('/' + tipo + '?slug=' + encodeURIComponent(slug) + '&_fields=id,title,date,content,link,comment_status').then(function (r) {
       if (!r.length) throw new Error('non trovato');
@@ -345,15 +367,15 @@
       $('[data-wp-titolo]').textContent = titolo;
       $('[data-wp-data]').textContent = tipo === 'posts' ? dataIt(a.date) : 'Pagina storica';
       inserisci($('[data-wp-corpo]'), a.content.rendered);
-      if (originale) originale.href = a.link.replace(/^https?:\/\/(www\.)?corriconlelinci\.com/, VECCHIO);
-      if (tipo === 'posts') caricaCommenti(a.id, originale ? originale.href : VECCHIO, a.comment_status === 'open');
+      if (tipo === 'posts') caricaCommenti(a.id);
     }).catch(function () {
       $('[data-wp-titolo]').textContent = 'Contenuto non trovato';
       $('[data-wp-corpo]').innerHTML = '<p>Non riusciamo a caricare questo contenuto. Prova dall’<a href="archivio.html">archivio</a>.</p>';
     });
   }
 
-  function caricaCommenti(id, linkOriginale, aperti) {
+  // Commenti storici dell'articolo, in sola lettura
+  function caricaCommenti(id) {
     var box = $('[data-wp-commenti]');
     if (!box) return;
     wp('/comments?post=' + id + '&per_page=50&order=asc&_fields=author_name,date,content').then(function (c) {
@@ -363,10 +385,7 @@
         return '<li class="rounded-2xl bg-white p-4 ring-1 ring-blu-100"><p class="text-sm"><strong>' + esc(x.author_name) + '</strong> · ' + dataIt(x.date) +
           '</p><p class="mt-1">' + esc(soloTesto(x.content.rendered)) + '</p></li>';
       }).join('');
-      var commenta = $('[data-wp-commenta]', box);
-      commenta.href = linkOriginale + '#respond';
-      if (!aperti) commenta.style.display = 'none';
-      if (!c.length && !aperti) return;
+      if (!c.length) return;
       box.hidden = false;
     }).catch(function () {});
   }

@@ -266,13 +266,16 @@
       <div class="card">
         <p class="font-display text-3xl font-extrabold uppercase text-blu-900">Newsletter delle Linci</p>
         <p class="mt-2 text-blu-800/90">Ricevi per email ogni nuovo articolo: gare, iscrizioni, classifiche. Siamo già in più di 400.</p>
-        <!-- La newsletter è quella di WordPress.com (stessa lista degli iscritti di oggi). Il modulo vive sul blog
-             perché WordPress lo protegge con un codice che scade: un modulo copiato qui verrebbe rifiutato. -->
-        <a href="https://corriconlelinci.wordpress.com/#subscribe-blog" target="_blank" rel="noopener" class="btn-scuro mt-5 w-full">
-          Iscriviti alla newsletter ↗
-        </a>
-        <p class="mt-3 text-sm text-blu-800/80">Si apre il modulo di iscrizione del blog delle Linci: scrivi la tua email e conferma dal messaggio
-          che ti arriva da WordPress.com. Puoi cancellarti quando vuoi dal link in fondo a ogni email.</p>
+        <!-- Newsletter di WordPress.com (stessa lista degli iscritti di oggi). Il sito invia l'email alla pagina ufficiale
+             di iscrizione di WordPress.com, che manda il link di conferma: niente passaggi dal vecchio blog. -->
+        <form data-newsletter class="mt-4" novalidate>
+          <label class="block"><span class="text-sm font-medium">La tua email</span>
+            <input name="email" type="email" autocomplete="email" inputmode="email" required class="campo"></label>
+          <button type="submit" class="btn-scuro mt-4 w-full">Iscrivimi alla newsletter</button>
+          <p data-esito class="hidden" role="status"></p>
+        </form>
+        <p class="mt-3 text-xs text-blu-800/80">Riceverai un'email di conferma da WordPress.com, che gestisce la newsletter delle Linci:
+          l'iscrizione vale solo dopo il clic sul link. Puoi cancellarti quando vuoi dal fondo di ogni email.</p>
       </div>
     </div>
   </section>

@@ -1,7 +1,7 @@
 # Come si gestisce il sito delle Linci
 
 Il sito è fatto di pagine statiche: non c'è nessun server, plugin o database da aggiornare.
-Tutto quello che cambia spesso (articoli, foto, newsletter, commenti) resta su **WordPress.com**, dove le Linci
+Tutto quello che cambia spesso (articoli, foto, newsletter) resta su **WordPress.com**, dove le Linci
 scrivono già oggi. Il nuovo sito lo legge da lì in tempo reale e lo mostra con la sua grafica, senza pubblicità.
 
 ## Chi modifica cosa
@@ -10,7 +10,7 @@ scrivono già oggi. Il nuovo sito lo legge da lì in tempo reale e lo mostra con
 |---|---|---|---|
 | **Notizie, racconti, classifiche, foto** | WordPress.com, come oggi (anche dall'app sul telefono) | Direttivo | Subito: home ("Ultime dal branco"), archivio, pagina dell'articolo |
 | **Newsletter** (oltre 400 iscritti) | Automatica: WordPress manda l'email a ogni nuovo articolo | Nessuno | Subito |
-| **Commenti** | Si scrivono sul blog WordPress; il sito li mostra sotto l'articolo | Lettori | Subito |
+| **Commenti** | Solo lettura: i commenti storici restano visibili sotto gli articoli | — | — |
 | **Loghi sponsor** | Pagina "Patrocinatori" su WordPress: aggiungi o togli un'immagine | Direttivo | Subito (home, "Ci sostengono") |
 | **Foto degli eventi** (Birronde, Aperitivo, Luna e Torre, Sveglia, Cena, Millennium) | La pagina dell'evento su WordPress | Direttivo | Subito (pagina Eventi) |
 | **Classifica lincesca, elenco linci, rassegna stampa, meme** | La rispettiva pagina su WordPress | Direttivo | Subito |
@@ -47,9 +47,9 @@ Se si sbaglia, nella cronologia del file ("History") si torna alla versione prec
    (restano però visibili nel repository, se è pubblico).
 2. **Modulo contatti**: al primo messaggio FormSubmit manda un'email di attivazione a lelinci.brancopodistico@gmail.com;
    basta cliccarla una volta.
-3. **Newsletter**: il pulsante "Iscriviti alla newsletter" in home apre il modulo originale del blog WordPress
-   (`corriconlelinci.wordpress.com/#subscribe-blog`), quindi gli iscritti finiscono nella stessa lista di oggi.
-   Un modulo copiato dentro il sito non funziona: WordPress lo protegge con un codice di sicurezza che scade dopo poche ore.
+3. **Newsletter**: il modulo in home manda l'email alla pagina ufficiale di iscrizione di WordPress.com del blog
+   (`subscribe.wordpress.com/memberships/?blog=64730052…`), che invia il link di conferma: gli iscritti finiscono nella
+   stessa lista di oggi e il visitatore non lascia il sito. Va provato una volta con un indirizzo vero.
 4. **Dominio** (quando le Linci approvano): su GitHub *Settings → Pages → Custom domain* scrivere `corriconlelinci.com`
    e puntare il dominio secondo le istruzioni di GitHub. Il blog WordPress resta attivo e gratuito su
    `corriconlelinci.wordpress.com`: è da lì che il sito legge gli articoli.
@@ -59,9 +59,8 @@ Il sito funziona uguale; `netlify.toml` aggiunge solo i redirect lato server se 
 
 ## Cosa il sito non fa (ancora) rispetto al vecchio
 
-- **Iscrizione alla newsletter dentro il sito**: si fa in un passaggio in più, sul modulo del blog che si apre in una nuova scheda.
+- **Scrivere nuovi commenti**: i 13 commenti storici si leggono sotto gli articoli, ma non se ne possono aggiungere (l'ultimo è del 2019).
 
-- **Scrivere un commento direttamente sul sito**: i commenti si leggono sotto l'articolo, ma per scriverne uno si apre il blog WordPress.
 - **"Mi piace" di WordPress e contatore visite**: non ci sono. Se servono statistiche, si può aggiungere un contatore
   senza cookie (per esempio GoatCounter, gratuito).
 - **Ricerca nel testo delle pagine storiche**: la ricerca dell'archivio trova titoli e testo degli articoli, non il contenuto delle pagine storiche.

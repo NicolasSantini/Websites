@@ -135,7 +135,7 @@ Si può rinnovare su WordPress.com come sempre, oppure trasferirlo a un altro re
 
 - **Niente da aggiornare:** nessun plugin né database sul sito. Le pagine HTML non "invecchiano" e non si possono bucare come un WordPress non aggiornato.
 - **Niente server:** GitHub Pages serve i file gratis; il certificato HTTPS si rinnova da solo.
-- **Le notizie si scrivono come oggi:** articoli, foto, newsletter e commenti restano su WordPress.com, anche dall'app. Il nuovo sito li legge da lì e li mostra senza pubblicità. Dettagli in [`GESTIONE.md`](./GESTIONE.md).
+- **Le notizie si scrivono come oggi:** articoli, foto e newsletter restano su WordPress.com, anche dall'app. Il nuovo sito li legge da lì e li mostra senza pubblicità. Dettagli in [`GESTIONE.md`](./GESTIONE.md).
 - **Aggiornare una gara è semplice:** 1–2 volte l'anno si cambiano date e quote nei file del sito, anche dal browser. Lo posso fare io in pochi minuti.
 
 ### Piano di passaggio, senza rischi e senza disturbare il Trebbio
